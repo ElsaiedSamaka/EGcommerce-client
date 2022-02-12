@@ -1,5 +1,5 @@
 import AddressDetail from "../components/address/AddressDetail";
-import ContactForm from "../components/contactform/ContactForm";
+import ContactForm from "../components/contactForm/ContactForm";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import NavBar from "../components/header/NavBar";
