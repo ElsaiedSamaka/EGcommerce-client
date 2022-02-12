@@ -7,12 +7,6 @@ import "../styles/css/owl.carousel.css";
 import "../styles/css/responsive.css";
 import "../styles/style.css";
 
-
-
-
-
-
-
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
