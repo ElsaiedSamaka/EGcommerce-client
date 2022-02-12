@@ -1,13 +1,11 @@
 import Head from "next/head";
 import LatestBlogs from "../components/blog/LatestBlogs";
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
-import NavBar from "../components/header/NavBar";
 import HomeSlider from "../components/home_slider/HomeSlider";
 import FeaturedProducts from "../components/home_suite/FeaturedProducts";
 import LatestProducts from "../components/home_suite/LatestProducts";
 import Partners from "../components/partners/Partners";
 import Testimonial from "../components/testimonial/Testimonial";
+import Layout from "../components/util/Layout";
 
 
 export default function Home() {
@@ -19,8 +17,7 @@ export default function Home() {
 
       </Head>
       <body>
-	  	<Header />
-	  	<NavBar />
+<Layout>
       <HomeSlider />
         <FeaturedProducts />
 
@@ -28,7 +25,7 @@ export default function Home() {
         <Testimonial />
         <LatestBlogs />
         <Partners />
-        <Footer />
+        </Layout>
       </body>
     </div>
   );
