@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 import React from 'react'
 
 class MyDocument extends Document {
@@ -27,12 +26,14 @@ class MyDocument extends Document {
                 
           {/* <!-- Font awesome css --> */}
 	      	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
-	        {/* <!-- Revolution slider css --> */}
+          {/* <!-- Revolution slider css --> */}
+		      <link rel="stylesheet" href="/css/owl.carousel.css"/>
+          
           <link href="/js/rs-plugin/css/settings.css" rel="stylesheet" />
-          <script src="/js/main.js"  type="text/javascript"/>
-          <script src="/js/owl.carousel.min.js" type="text/javascript"/>
-          <Script src="https://code.jquery.com/jquery.min.js" />
-          <script src="/js/bootstrap.min.js" type="text/javascript" />
+          <script src="/js/main.js" />
+          <script src="/js/owl.carousel.min.js" />
+          {/* <Script src="https://code.jquery.com/jquery.min.js" /> */}
+          <script src="/js/bootstrap.min.js"  />
       		<script src="/js/rs-plugin/js/jquery.themepunch.plugins.min.js"/>
 	      	<script src="/js/rs-plugin/js/jquery.themepunch.revolution.min.js"/>
         	<script src="/js/rs-plugin/rs.home.js"/>
