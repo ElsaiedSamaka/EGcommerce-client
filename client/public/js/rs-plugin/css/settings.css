@@ -1237,7 +1237,7 @@ background:url(../assets/arrow_right3_hr.png) no-repeat center center;
 }
 */
 
- [class^="revicon-"]:before, [class*=" revicon-"]:before {
+ [className^="revicon-"]:before, [className*=" revicon-"]:before {
   font-family: "revicons";
   font-style: normal;
   font-weight: normal;

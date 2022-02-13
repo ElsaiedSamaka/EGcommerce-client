@@ -118,7 +118,7 @@
 
 						if (opt.forceFullWidth=="on") {
 							var loff = container.parent().offset().left;
-							container.parent().append('<div class="tp-fullwidth-forcer" style="width:100%;height:'+container.height()+'px"></div>');
+							container.parent().append('<div className="tp-fullwidth-forcer" style="width:100%;height:'+container.height()+'px"></div>');
 							container.css({'backgroundColor':container.parent().css('backgroundColor'),'backgroundImage':container.parent().css('backgroundImage')});
 							container.parent().css({'width':jQuery(window).width()});
 							container.css({'left':(0-loff)+"px",position:'absolute','width':jQuery(window).width()});
@@ -288,10 +288,10 @@
 									if (opt.navigationVOffset==undefined) opt.navOffsetVertical=0;
 
 
-									container.append('<div class="tp-loader"></div>');
+									container.append('<div className="tp-loader"></div>');
 
 									// RESET THE TIMER
-									if (container.find('.tp-bannertimer').length==0) container.append('<div class="tp-bannertimer" style="visibility:hidden"></div>');
+									if (container.find('.tp-bannertimer').length==0) container.append('<div className="tp-bannertimer" style="visibility:hidden"></div>');
 									var bt=container.find('.tp-bannertimer');
 									if (bt.length>0) {
 										bt.css({'width':'0%'});
@@ -333,7 +333,7 @@
 
 									// LETS SEE IF THERE IS ANY SHADOW
 									if (opt.shadow!=0) {
-										container.parent().append('<div class="tp-bannershadow tp-shadow'+opt.shadow+'"></div>');
+										container.parent().append('<div className="tp-bannershadow tp-shadow'+opt.shadow+'"></div>');
 										var loff=0;
 										if (opt.forceFullWidth=="on")
 													loff = 0-opt.container.parent().offset().left;
@@ -682,7 +682,7 @@
 			var cap=container.parent();
 
 			if (opt.navigationType=="thumb" || opt.navsecond=="both") {
-						cap.append('<div class="tp-bullets tp-thumbs '+opt.navigationStyle+'"><div class="tp-mask"><div class="tp-thumbcontainer"></div></div></div>');
+						cap.append('<div className="tp-bullets tp-thumbs '+opt.navigationStyle+'"><div className="tp-mask"><div className="tp-thumbcontainer"></div></div></div>');
 			}
 			var bullets = cap.find('.tp-bullets.tp-thumbs .tp-mask .tp-thumbcontainer');
 			var bup = bullets.parent();
@@ -698,7 +698,7 @@
 								var src= li.data('thumb')
 							else
 								var src=li.find("img:first").attr('src');
-							bullets.append('<div class="bullet thumb" style="width:'+opt.thumbWidth+'px;height:'+opt.thumbHeight+'px;"><img src="'+src+'"></div>');
+							bullets.append('<div className="bullet thumb" style="width:'+opt.thumbWidth+'px;height:'+opt.thumbHeight+'px;"><img src="'+src+'"></div>');
 							var bullet= bullets.find('.bullet:first');
 				});
 			//bullets.append('<div style="clear:both"></div>');
@@ -847,7 +847,7 @@
 		function createBullets(container,opt) {
 
 			if (opt.navigationType=="bullet"  || opt.navigationType=="both") {
-						container.parent().append('<div class="tp-bullets simplebullets '+opt.navigationStyle+'"></div>');
+						container.parent().append('<div className="tp-bullets simplebullets '+opt.navigationStyle+'"></div>');
 			}
 
 
@@ -855,7 +855,7 @@
 
 			container.find('>ul:first >li').each(function(i) {
 							var src=container.find(">ul:first >li:eq("+i+") img:first").attr('src');
-							bullets.append('<div class="bullet"></div>');
+							bullets.append('<div className="bullet"></div>');
 							var bullet= bullets.find('.bullet:first');
 
 
@@ -889,7 +889,7 @@
 
 			});
 
-			bullets.append('<div class="tpclear"></div>');
+			bullets.append('<div className="tpclear"></div>');
 
 
 
@@ -915,8 +915,8 @@
 
 						if (opt.navigationArrows!="none" && opt.navigationArrows!="nexttobullets") arst = opt.soloArrowStyle;
 
-						container.parent().append('<div style="'+hidden+'" class="tp-leftarrow tparrows '+arst+'"></div>');
-						container.parent().append('<div style="'+hidden+'" class="tp-rightarrow tparrows '+arst+'"></div>');
+						container.parent().append('<div style="'+hidden+'" className="tp-leftarrow tparrows '+arst+'"></div>');
+						container.parent().append('<div style="'+hidden+'" className="tp-rightarrow tparrows '+arst+'"></div>');
 
 						// 	THE LEFT / RIGHT BUTTON CLICK !	 //
 						container.parent().find('.tp-rightarrow').click(function() {
@@ -1023,12 +1023,12 @@
 			var ca = container.parent().find('.tparrows');
 
 			if (bullets==null) {
-				container.append('<div class=".tp-bullets"></div>');
+				container.append('<div className=".tp-bullets"></div>');
 				var bullets = container.parent().find('.tp-bullets');
 			}
 
 			if (ca==null) {
-				container.append('<div class=".tparrows"></div>');
+				container.append('<div className=".tparrows"></div>');
 				var ca = container.parent().find('.tparrows');
 			}
 
@@ -1291,10 +1291,10 @@
 					if (li.data('target')!=undefined) target=li.data('target');
 
 					if (link=="slide") {
-						li.append('<div class="tp-caption sft slidelink" style="z-index:'+zindex+';" data-x="0" data-y="0" data-linktoslide="'+linktoslide+'" data-start="0"><a><div></div></a></div>');
+						li.append('<div className="tp-caption sft slidelink" style="z-index:'+zindex+';" data-x="0" data-y="0" data-linktoslide="'+linktoslide+'" data-start="0"><a><div></div></a></div>');
 					} else {
 						linktoslide="no";
-						li.append('<div class="tp-caption sft slidelink" style="z-index:'+zindex+';" data-x="0" data-y="0" data-linktoslide="'+linktoslide+'" data-start="0"><a target="'+target+'" href="'+link+'"><div></div></a></div>');
+						li.append('<div className="tp-caption sft slidelink" style="z-index:'+zindex+';" data-x="0" data-y="0" data-linktoslide="'+linktoslide+'" data-start="0"><a target="'+target+'" href="'+link+'"><div></div></a></div>');
 					}
 
 				}
@@ -1315,7 +1315,7 @@
 					setSize(img,opt);
 				}
 
-				img.wrap('<div class="slotholder" style="width:100%;height:100%;"></div>');
+				img.wrap('<div className="slotholder" style="width:100%;height:100%;"></div>');
 
 				var src=img.attr('src');
 				var ll = img.data('lazyload');
@@ -1328,7 +1328,7 @@
 				if (bgrepeat==undefined) bgrepeat="no-repeat";
 				if (bgposition==undefined) bgposition="center center"
 
-				img.replaceWith('<div class="tp-bgimg defaultimg" data-lazyload="'+img.data('lazyload')+'" data-bgfit="'+bgfit+'"data-bgposition="'+bgposition+'" data-bgrepeat="'+bgrepeat+'" data-lazydone="'+img.data('lazydone')+'" data-src="'+src+'" style="background-color:'+img.css("backgroundColor")+';background-repeat:'+bgrepeat+';background-image:url('+src+');background-size:'+bgfit+';background-position:'+bgposition+';width:100%;height:100%;"></div>');
+				img.replaceWith('<div className="tp-bgimg defaultimg" data-lazyload="'+img.data('lazyload')+'" data-bgfit="'+bgfit+'"data-bgposition="'+bgposition+'" data-bgrepeat="'+bgrepeat+'" data-lazydone="'+img.data('lazydone')+'" data-src="'+src+'" style="background-color:'+img.css("backgroundColor")+';background-repeat:'+bgrepeat+';background-image:url('+src+');background-size:'+bgfit+';background-position:'+bgposition+';width:100%;height:100%;"></div>');
 
 				img.css({'opacity':0});
 				img.data('li-id',j);
@@ -1379,12 +1379,12 @@
 					if (!visible) var off=0-opt.slotw;
 
 					for (var i=0;i<opt.slots;i++)
-							sh.append('<div class="slot" style="position:absolute;'+
+							sh.append('<div className="slot" style="position:absolute;'+
 															'top:'+(0+fullyoff)+'px;'+
 															'left:'+(fulloff+i*opt.slotw)+'px;'+
 															'overflow:hidden;width:'+opt.slotw+'px;'+
 															'height:'+h+'px">'+
-							'<div class="slotslide" style="position:absolute;'+
+							'<div className="slotslide" style="position:absolute;'+
 															'top:0px;left:'+off+'px;'+
 															'width:'+opt.slotw+'px;'+
 															'height:'+h+'px;overflow:hidden;">'+
@@ -1401,14 +1401,14 @@
 					if (!visible) var off=0-opt.sloth;
 
 					for (var i=0;i<opt.slots+2;i++)
-						sh.append('<div class="slot" style="position:absolute;'+
+						sh.append('<div className="slot" style="position:absolute;'+
 												 'top:'+(fullyoff+(i*opt.sloth))+'px;'+
 												 'left:'+(fulloff)+'px;'+
 												 'overflow:hidden;'+
 												 'width:'+w+'px;'+
 												 'height:'+(opt.sloth)+'px">'+
 
-									 '<div class="slotslide" style="position:absolute;'+
+									 '<div className="slotslide" style="position:absolute;'+
 														 'top:'+(off)+'px;'+
 														 'left:0px;width:'+w+'px;'+
 														 'height:'+opt.sloth+'px;'+
@@ -1493,7 +1493,7 @@
 					for (var i=0;i<opt.slots;i++) 	{
 
 
-						sh.append('<div class="slot" '+
+						sh.append('<div className="slot" '+
 								  'style="position:absolute;'+
 											'top:'+(fullyoff+y)+'px;'+
 											'left:'+(fulloff+x)+'px;'+
@@ -1501,7 +1501,7 @@
 											'height:'+basicsize+'px;'+
 											'overflow:hidden;">'+
 
-								  '<div class="slotslide" data-x="'+x+'" data-y="'+y+'" '+
+								  '<div className="slotslide" data-x="'+x+'" data-y="'+y+'" '+
 								  			'style="position:absolute;'+
 											'top:'+(0)+'px;'+
 											'left:'+(0)+'px;'+
@@ -2479,7 +2479,7 @@
 
 
 					// PREPARE THE CUTS
-					actli.wrapInner('<div class="tp-half-one" style="position:relative; width:100%;height:100%"></div>');
+					actli.wrapInner('<div className="tp-half-one" style="position:relative; width:100%;height:100%"></div>');
 
 					actli.find('.tp-half-one').clone(true).appendTo(actli).addClass("tp-half-two");
 					actli.find('.tp-half-two').removeClass('tp-half-one');
@@ -2490,9 +2490,9 @@
 						ooh = container.height();
 
 
-					actli.find('.tp-half-one .defaultimg').wrap('<div class="tp-papercut" style="width:'+oow+'px;height:'+ooh+'px;"></div>')
+					actli.find('.tp-half-one .defaultimg').wrap('<div className="tp-papercut" style="width:'+oow+'px;height:'+ooh+'px;"></div>')
 
-					actli.find('.tp-half-two .defaultimg').wrap('<div class="tp-papercut" style="width:'+oow+'px;height:'+ooh+'px;"></div>')
+					actli.find('.tp-half-two .defaultimg').wrap('<div className="tp-papercut" style="width:'+oow+'px;height:'+ooh+'px;"></div>')
 
 					actli.find('.tp-half-two .defaultimg').css({position:'absolute',top:'-50%'});
 
@@ -3196,7 +3196,7 @@
 												opt.nextslideatend = nextcaption.data('nextslideatend');
 												if (nextcaption.data('thumbimage')!=undefined && nextcaption.data('thumbimage').length>2 && nextcaption.data('autoplay')!=true && !recalled) {
 													nextcaption.find('.tp-thumb-image').remove();
-													nextcaption.append('<div class="tp-thumb-image" style="cursor:pointer; position:absolute;top:0px;left:0px;width:100%;height:100%;background-image:url('+nextcaption.data('thumbimage')+'); background-size:cover"></div>');
+													nextcaption.append('<div className="tp-thumb-image" style="cursor:pointer; position:absolute;top:0px;left:0px;width:100%;height:100%;background-image:url('+nextcaption.data('thumbimage')+'); background-size:cover"></div>');
 												}
 
 													if (ifr.attr('src').toLowerCase().indexOf('youtube')>=0) {

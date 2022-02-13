@@ -115,7 +115,7 @@ vjs.players = {};
  */
 vjs.CoreObject = vjs['CoreObject'] = function(){};
 // Manually exporting vjs['CoreObject'] here for Closure Compiler
-// because of the use of the extend/create class methods
+// because of the use of the extend/create className methods
 // If we didn't do this, those functions would get flattend to something like
 // `a = ...` and `this.prototype` would refer to the global object instead of
 // CoreObject
@@ -135,7 +135,7 @@ vjs.CoreObject.extend = function(props){
   // or using the init of the parent object
   // Make sure to check the unobfuscated version for external libs
   init = props['init'] || props.init || this.prototype['init'] || this.prototype.init || function(){};
-  // In Resig's simple class inheritance (previously used) the constructor
+  // In Resig's simple className inheritance (previously used) the constructor
   //  is a function that calls `this.init.apply(arguments)`
   // However that would prevent us from using `ParentObject.call(this);`
   //  in a Child constuctor because the `this` in `this.init`
@@ -154,7 +154,7 @@ vjs.CoreObject.extend = function(props){
   // instances of subObj would have the constructor of the parent Object
   subObj.prototype.constructor = subObj;
 
-  // Make the class extendable
+  // Make the className extendable
   subObj.extend = vjs.CoreObject.extend;
   // Make a function for creating instances
   subObj.create = vjs.CoreObject.create;
@@ -170,8 +170,8 @@ vjs.CoreObject.extend = function(props){
 };
 
 /**
- * Create a new instace of this Object class
- * @return {vjs.CoreObject} Returns an instance of a CoreObject subclass
+ * Create a new instace of this Object className
+ * @return {vjs.CoreObject} Returns an instance of a CoreObject subclassName
  * @this {*}
  */
 vjs.CoreObject.create = function(){
@@ -783,36 +783,36 @@ vjs.isEmpty = function(obj) {
 };
 
 /**
- * Add a CSS class name to an element
- * @param {Element} element    Element to add class name to
- * @param {String} classToAdd Classname to add
+ * Add a CSS className name to an element
+ * @param {Element} element    Element to add className name to
+ * @param {String} classNameToAdd Classname to add
  */
-vjs.addClass = function(element, classToAdd){
-  if ((' '+element.className+' ').indexOf(' '+classToAdd+' ') == -1) {
-    element.className = element.className === '' ? classToAdd : element.className + ' ' + classToAdd;
+vjs.addClass = function(element, classNameToAdd){
+  if ((' '+element.classNameName+' ').indexOf(' '+classNameToAdd+' ') == -1) {
+    element.classNameName = element.classNameName === '' ? classNameToAdd : element.classNameName + ' ' + classNameToAdd;
   }
 };
 
 /**
- * Remove a CSS class name from an element
- * @param {Element} element    Element to remove from class name
- * @param {String} classToAdd Classname to remove
+ * Remove a CSS className name from an element
+ * @param {Element} element    Element to remove from className name
+ * @param {String} classNameToAdd Classname to remove
  */
-vjs.removeClass = function(element, classToRemove){
-  var classNames, i;
+vjs.removeClass = function(element, classNameToRemove){
+  var classNameNames, i;
 
-  if (element.className.indexOf(classToRemove) == -1) { return; }
+  if (element.classNameName.indexOf(classNameToRemove) == -1) { return; }
 
-  classNames = element.className.split(' ');
+  classNameNames = element.classNameName.split(' ');
 
   // no arr.indexOf in ie8, and we don't want to add a big shim
-  for (i = classNames.length - 1; i >= 0; i--) {
-    if (classNames[i] === classToRemove) {
-      classNames.splice(i,1);
+  for (i = classNameNames.length - 1; i >= 0; i--) {
+    if (classNameNames[i] === classNameToRemove) {
+      classNameNames.splice(i,1);
     }
   }
 
-  element.className = classNames.join(' ');
+  element.classNameName = classNameNames.join(' ');
 };
 
 /**
@@ -1181,12 +1181,12 @@ vjs.findPosition = function(el) {
     };
 };
 /**
- * @fileoverview Player Component - Base class for all UI objects
+ * @fileoverview Player Component - Base className for all UI objects
  *
  */
 
 /**
- * Base UI Component class
+ * Base UI Component className
  * @param {Object} player  Main Player
  * @param {Object=} options
  * @constructor
@@ -1442,7 +1442,7 @@ vjs.Component.prototype.getChild = function(name){
 
 /**
  * Adds a child component inside this component.
- * @param {String|vjs.Component} child The class name or instance of a child to add.
+ * @param {String|vjs.Component} child The className name or instance of a child to add.
  * @param {Object=} options Optional options, including options to be passed to
  *  children of the child.
  * @return {vjs.Component} The child component, because it might be created in this process.
@@ -1468,7 +1468,7 @@ vjs.Component.prototype.addChild = function(child, options){
     // Create a new object & element for this controls set
     // If there's no .player_, this is a player
     // Closure Compiler throws an 'incomplete alias' warning if we use the vjs variable directly.
-    // Every class should be exported, so this should never be a problem here.
+    // Every className should be exported, so this should never be a problem here.
     component = new window['videojs'][componentClass](this.player_ || this, options);
 
   // child is a component instance
@@ -1558,7 +1558,7 @@ vjs.Component.prototype.initChildren = function(){
 };
 
 vjs.Component.prototype.buildCSSClass = function(){
-    // Child classes can include a function that does:
+    // Child classNamees can include a function that does:
     // return 'CLASS NAME' + this._super();
     return '';
 };
@@ -1621,7 +1621,7 @@ vjs.Component.prototype.isReady_;
 
 /**
  * Trigger ready as soon as initialization is finished.
- *   Allows for delaying ready. Override on a sub class prototype.
+ *   Allows for delaying ready. Override on a sub className prototype.
  *   If you set this.isReadyOnInitFinish_ it will affect all components.
  *   Specially used when waiting for the Flash player to asynchrnously load.
  *   @type {Boolean}
@@ -1684,22 +1684,22 @@ vjs.Component.prototype.triggerReady = function(){
 ============================================================================= */
 
 /**
- * Add a CSS class name to the component's element
- * @param {String} classToAdd Classname to add
+ * Add a CSS className name to the component's element
+ * @param {String} classNameToAdd Classname to add
  * @return {vjs.Component}
  */
-vjs.Component.prototype.addClass = function(classToAdd){
-  vjs.addClass(this.el_, classToAdd);
+vjs.Component.prototype.addClass = function(classNameToAdd){
+  vjs.addClass(this.el_, classNameToAdd);
   return this;
 };
 
 /**
- * Remove a CSS class name from the component's element
- * @param {String} classToRemove Classname to remove
+ * Remove a CSS className name from the component's element
+ * @param {String} classNameToRemove Classname to remove
  * @return {vjs.Component}
  */
-vjs.Component.prototype.removeClass = function(classToRemove){
-  vjs.removeClass(this.el_, classToRemove);
+vjs.Component.prototype.removeClass = function(classNameToRemove){
+  vjs.removeClass(this.el_, classNameToRemove);
   return this;
 };
 
@@ -1895,10 +1895,10 @@ vjs.Component.prototype.emitTapEvents = function(){
     }
   });
 };
-/* Button - Base class for all buttons
+/* Button - Base className for all buttons
 ================================================================================ */
 /**
- * Base class for all buttons
+ * Base className for all buttons
  * @param {vjs.Player|Object} player
  * @param {Object=} options
  * @constructor
@@ -1934,8 +1934,8 @@ vjs.Button = vjs.Component.extend({
 vjs.Button.prototype.createEl = function(type, props){
   // Add standard Aria and Tabindex info
   props = vjs.obj.merge({
-    className: this.buildCSSClass(),
-    innerHTML: '<div class="vjs-control-content"><span class="vjs-control-text">' + (this.buttonText || 'Need Text') + '</span></div>',
+    classNameName: this.buildCSSClass(),
+    innerHTML: '<div className="vjs-control-content"><span className="vjs-control-text">' + (this.buttonText || 'Need Text') + '</span></div>',
     role: 'button',
     'aria-live': 'polite', // let the screen reader user know that the text of the button may change
     tabIndex: 0
@@ -1983,7 +1983,7 @@ vjs.Slider = vjs.Component.extend({
   init: function(player, options){
     vjs.Component.call(this, player, options);
 
-    // Set property names to bar and handle to match with the child Slider class is looking for
+    // Set property names to bar and handle to match with the child Slider className is looking for
     this.bar = this.getChild(this.options_['barName']);
     this.handle = this.getChild(this.options_['handleName']);
 
@@ -2008,8 +2008,8 @@ vjs.Slider = vjs.Component.extend({
 
 vjs.Slider.prototype.createEl = function(type, props) {
   props = props || {};
-  // Add the slider element class to all sub classes
-  props.className = props.className + ' vjs-slider';
+  // Add the slider element className to all sub classNamees
+  props.classNameName = props.classNameName + ' vjs-slider';
   props = vjs.obj.merge({
     role: 'slider',
     'aria-valuenow': 0,
@@ -2191,10 +2191,10 @@ vjs.SliderHandle.prototype.defaultValue = 0;
 /** @inheritDoc */
 vjs.SliderHandle.prototype.createEl = function(type, props) {
   props = props || {};
-  // Add the slider element class to all sub classes
-  props.className = props.className + ' vjs-slider-handle';
+  // Add the slider element className to all sub classNamees
+  props.classNameName = props.classNameName + ' vjs-slider-handle';
   props = vjs.obj.merge({
-    innerHTML: '<span class="vjs-control-text">'+this.defaultValue+'</span>'
+    innerHTML: '<span className="vjs-control-text">'+this.defaultValue+'</span>'
   }, props);
 
   return vjs.Component.prototype.createEl.call(this, 'div', props);
@@ -2224,11 +2224,11 @@ vjs.Menu.prototype.addItem = function(component){
 vjs.Menu.prototype.createEl = function(){
   var contentElType = this.options().contentElType || 'ul';
   this.contentEl_ = vjs.createEl(contentElType, {
-    className: 'vjs-menu-content'
+    classNameName: 'vjs-menu-content'
   });
   var el = vjs.Component.prototype.createEl.call(this, 'div', {
     append: this.contentEl_,
-    className: 'vjs-menu'
+    classNameName: 'vjs-menu'
   });
   el.appendChild(this.contentEl_);
 
@@ -2259,7 +2259,7 @@ vjs.MenuItem = vjs.Button.extend({
 /** @inheritDoc */
 vjs.MenuItem.prototype.createEl = function(type, props){
   return vjs.Button.prototype.createEl.call(this, 'li', vjs.obj.merge({
-    className: 'vjs-menu-item',
+    classNameName: 'vjs-menu-item',
     innerHTML: this.options_['label']
   }, props));
 };
@@ -2285,7 +2285,7 @@ vjs.MenuItem.prototype.selected = function(selected){
 
 
 /**
- * A button class with a popup menu
+ * A button className with a popup menu
  * @param {vjs.Player|Object} player
  * @param {Object=} options
  * @constructor
@@ -2323,7 +2323,7 @@ vjs.MenuButton.prototype.createMenu = function(){
   // Add a title list item to the top
   if (this.options().title) {
     menu.el().appendChild(vjs.createEl('li', {
-      className: 'vjs-menu-title',
+      classNameName: 'vjs-menu-title',
       innerHTML: vjs.capitalize(this.kind_),
       tabindex: -1
     }));
@@ -2342,13 +2342,13 @@ vjs.MenuButton.prototype.createMenu = function(){
 };
 
 /**
- * Create the list of menu items. Specific to each subclass.
+ * Create the list of menu items. Specific to each subclassName.
  */
 vjs.MenuButton.prototype.createItems = function(){};
 
 /** @inheritDoc */
 vjs.MenuButton.prototype.buildCSSClass = function(){
-  return this.className + ' vjs-menu-button ' + vjs.Button.prototype.buildCSSClass.call(this);
+  return this.classNameName + ' vjs-menu-button ' + vjs.Button.prototype.buildCSSClass.call(this);
 };
 
 // Focus - Add keyboard functionality to element
@@ -2408,7 +2408,7 @@ vjs.MenuButton.prototype.unpressButton = function(){
 };
 
 /**
- * Main player class. A player instance is returned by _V_(id);
+ * Main player className. A player instance is returned by _V_(id);
  * @param {Element} tag        The original video tag used for configuring options
  * @param {Object=} options    Player options
  * @param {Function=} ready    Ready callback function
@@ -2443,7 +2443,7 @@ vjs.Player = vjs.Component.extend({
     // Inits and embeds any child components in opts
     vjs.Component.call(this, this, options, ready);
 
-    // Update controls className. Can't do this when the controls are initially
+    // Update controls classNameName. Can't do this when the controls are initially
     // set because the element doesn't exist yet.
     if (this.controls()) {
       this.addClass('vjs-controls-enabled');
@@ -2587,16 +2587,16 @@ vjs.Player.prototype.createEl = function(){
   // Make sure tag ID exists
   tag.id = tag.id || 'vjs_video_' + vjs.guid++;
 
-  // Give video tag ID and class to player div
+  // Give video tag ID and className to player div
   // ID will now reference player box, not the video tag
   el.id = tag.id;
-  el.className = tag.className;
+  el.classNameName = tag.classNameName;
 
-  // Update tag id/class for use as HTML5 playback tech
-  // Might think we should do this after embedding in container so .vjs-tech class
-  // doesn't flash 100% width/height, but class only applies with .video-js parent
+  // Update tag id/className for use as HTML5 playback tech
+  // Might think we should do this after embedding in container so .vjs-tech className
+  // doesn't flash 100% width/height, but className only applies with .video-js parent
   tag.id += '_html5_api';
-  tag.className = 'vjs-tech';
+  tag.classNameName = 'vjs-tech';
 
   // Make player findable on elements
   tag['player'] = el['player'] = this;
@@ -3542,7 +3542,7 @@ vjs.ControlBar.prototype.options_ = {
 
 vjs.ControlBar.prototype.createEl = function(){
   return vjs.createEl('div', {
-    className: 'vjs-control-bar'
+    classNameName: 'vjs-control-bar'
   });
 };
 /**
@@ -3576,14 +3576,14 @@ vjs.PlayToggle.prototype.onClick = function(){
   }
 };
 
-  // OnPlay - Add the vjs-playing class to the element so it can change appearance
+  // OnPlay - Add the vjs-playing className to the element so it can change appearance
 vjs.PlayToggle.prototype.onPlay = function(){
   vjs.removeClass(this.el_, 'vjs-paused');
   vjs.addClass(this.el_, 'vjs-playing');
   this.el_.children[0].children[0].innerHTML = 'Pause'; // change the button text to "Pause"
 };
 
-  // OnPause - Add the vjs-paused class to the element so it can change appearance
+  // OnPause - Add the vjs-paused className to the element so it can change appearance
 vjs.PlayToggle.prototype.onPause = function(){
   vjs.removeClass(this.el_, 'vjs-playing');
   vjs.addClass(this.el_, 'vjs-paused');
@@ -3605,12 +3605,12 @@ vjs.CurrentTimeDisplay = vjs.Component.extend({
 
 vjs.CurrentTimeDisplay.prototype.createEl = function(){
   var el = vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-current-time vjs-time-controls vjs-control'
+    classNameName: 'vjs-current-time vjs-time-controls vjs-control'
   });
 
   this.content = vjs.createEl('div', {
-    className: 'vjs-current-time-display',
-    innerHTML: '<span class="vjs-control-text">Current Time </span>' + '0:00', // label the current time for screen reader users
+    classNameName: 'vjs-current-time-display',
+    innerHTML: '<span className="vjs-control-text">Current Time </span>' + '0:00', // label the current time for screen reader users
     'aria-live': 'off' // tell screen readers not to automatically read the time as it changes
   });
 
@@ -3621,7 +3621,7 @@ vjs.CurrentTimeDisplay.prototype.createEl = function(){
 vjs.CurrentTimeDisplay.prototype.updateContent = function(){
   // Allows for smooth scrubbing, when player can't keep up.
   var time = (this.player_.scrubbing) ? this.player_.getCache().currentTime : this.player_.currentTime();
-  this.content.innerHTML = '<span class="vjs-control-text">Current Time </span>' + vjs.formatTime(time, this.player_.duration());
+  this.content.innerHTML = '<span className="vjs-control-text">Current Time </span>' + vjs.formatTime(time, this.player_.duration());
 };
 
 /**
@@ -3641,12 +3641,12 @@ vjs.DurationDisplay = vjs.Component.extend({
 
 vjs.DurationDisplay.prototype.createEl = function(){
   var el = vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-duration vjs-time-controls vjs-control'
+    classNameName: 'vjs-duration vjs-time-controls vjs-control'
   });
 
   this.content = vjs.createEl('div', {
-    className: 'vjs-duration-display',
-    innerHTML: '<span class="vjs-control-text">Duration Time </span>' + '0:00', // label the duration time for screen reader users
+    classNameName: 'vjs-duration-display',
+    innerHTML: '<span className="vjs-control-text">Duration Time </span>' + '0:00', // label the duration time for screen reader users
     'aria-live': 'off' // tell screen readers not to automatically read the time as it changes
   });
 
@@ -3657,7 +3657,7 @@ vjs.DurationDisplay.prototype.createEl = function(){
 vjs.DurationDisplay.prototype.updateContent = function(){
   var duration = this.player_.duration();
   if (duration) {
-      this.content.innerHTML = '<span class="vjs-control-text">Duration Time </span>' + vjs.formatTime(duration); // label the duration time for screen reader users
+      this.content.innerHTML = '<span className="vjs-control-text">Duration Time </span>' + vjs.formatTime(duration); // label the duration time for screen reader users
   }
 };
 
@@ -3676,7 +3676,7 @@ vjs.TimeDivider = vjs.Component.extend({
 
 vjs.TimeDivider.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-time-divider',
+    classNameName: 'vjs-time-divider',
     innerHTML: '<div><span>/</span></div>'
   });
 };
@@ -3698,12 +3698,12 @@ vjs.RemainingTimeDisplay = vjs.Component.extend({
 
 vjs.RemainingTimeDisplay.prototype.createEl = function(){
   var el = vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-remaining-time vjs-time-controls vjs-control'
+    classNameName: 'vjs-remaining-time vjs-time-controls vjs-control'
   });
 
   this.content = vjs.createEl('div', {
-    className: 'vjs-remaining-time-display',
-    innerHTML: '<span class="vjs-control-text">Remaining Time </span>' + '-0:00', // label the remaining time for screen reader users
+    classNameName: 'vjs-remaining-time-display',
+    innerHTML: '<span className="vjs-control-text">Remaining Time </span>' + '-0:00', // label the remaining time for screen reader users
     'aria-live': 'off' // tell screen readers not to automatically read the time as it changes
   });
 
@@ -3713,7 +3713,7 @@ vjs.RemainingTimeDisplay.prototype.createEl = function(){
 
 vjs.RemainingTimeDisplay.prototype.updateContent = function(){
   if (this.player_.duration()) {
-    this.content.innerHTML = '<span class="vjs-control-text">Remaining Time </span>' + '-'+ vjs.formatTime(this.player_.remainingTime());
+    this.content.innerHTML = '<span className="vjs-control-text">Remaining Time </span>' + '-'+ vjs.formatTime(this.player_.remainingTime());
   }
 
   // Allows for smooth scrubbing, when player can't keep up.
@@ -3768,7 +3768,7 @@ vjs.ProgressControl.prototype.options_ = {
 
 vjs.ProgressControl.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-progress-control vjs-control'
+    classNameName: 'vjs-progress-control vjs-control'
   });
 };
 
@@ -3801,7 +3801,7 @@ vjs.SeekBar.prototype.playerEvent = 'timeupdate';
 
 vjs.SeekBar.prototype.createEl = function(){
   return vjs.Slider.prototype.createEl.call(this, 'div', {
-    className: 'vjs-progress-holder',
+    classNameName: 'vjs-progress-holder',
     'aria-label': 'video progress bar'
   });
 };
@@ -3888,8 +3888,8 @@ vjs.LoadProgressBar = vjs.Component.extend({
 
 vjs.LoadProgressBar.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-load-progress',
-    innerHTML: '<span class="vjs-control-text">Loaded: 0%</span>'
+    classNameName: 'vjs-load-progress',
+    innerHTML: '<span className="vjs-control-text">Loaded: 0%</span>'
   });
 };
 
@@ -3913,8 +3913,8 @@ vjs.PlayProgressBar = vjs.Component.extend({
 
 vjs.PlayProgressBar.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-play-progress',
-    innerHTML: '<span class="vjs-control-text">Progress: 0%</span>'
+    classNameName: 'vjs-play-progress',
+    innerHTML: '<span className="vjs-control-text">Progress: 0%</span>'
   });
 };
 
@@ -3933,7 +3933,7 @@ vjs.SeekHandle.prototype.defaultValue = '00:00';
 /** @inheritDoc */
 vjs.SeekHandle.prototype.createEl = function(){
   return vjs.SliderHandle.prototype.createEl.call(this, 'div', {
-    className: 'vjs-seek-handle'
+    classNameName: 'vjs-seek-handle'
   });
 };/**
  * Control the volume
@@ -3968,7 +3968,7 @@ vjs.VolumeControl.prototype.options_ = {
 
 vjs.VolumeControl.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-volume-control vjs-control'
+    classNameName: 'vjs-volume-control vjs-control'
   });
 };
 
@@ -4007,7 +4007,7 @@ vjs.VolumeBar.prototype.playerEvent = 'volumechange';
 
 vjs.VolumeBar.prototype.createEl = function(){
   return vjs.Slider.prototype.createEl.call(this, 'div', {
-    className: 'vjs-volume-bar',
+    classNameName: 'vjs-volume-bar',
     'aria-label': 'volume level'
   });
 };
@@ -4047,8 +4047,8 @@ vjs.VolumeLevel = vjs.Component.extend({
 
 vjs.VolumeLevel.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-volume-level',
-    innerHTML: '<span class="vjs-control-text"></span>'
+    classNameName: 'vjs-volume-level',
+    innerHTML: '<span className="vjs-control-text"></span>'
   });
 };
 
@@ -4066,7 +4066,7 @@ vjs.VolumeLevel.prototype.createEl = function(){
  /** @inheritDoc */
  vjs.VolumeHandle.prototype.createEl = function(){
    return vjs.SliderHandle.prototype.createEl.call(this, 'div', {
-     className: 'vjs-volume-handle'
+     classNameName: 'vjs-volume-handle'
    });
  };
 /**
@@ -4098,8 +4098,8 @@ vjs.MuteToggle = vjs.Button.extend({
 
 vjs.MuteToggle.prototype.createEl = function(){
   return vjs.Button.prototype.createEl.call(this, 'div', {
-    className: 'vjs-mute-control vjs-control',
-    innerHTML: '<div><span class="vjs-control-text">Mute</span></div>'
+    classNameName: 'vjs-mute-control vjs-control',
+    innerHTML: '<div><span className="vjs-control-text">Mute</span></div>'
   });
 };
 
@@ -4132,7 +4132,7 @@ vjs.MuteToggle.prototype.update = function(){
       }
   }
 
-  /* TODO improve muted icon classes */
+  /* TODO improve muted icon classNamees */
   for (var i = 0; i < 4; i++) {
     vjs.removeClass(this.el_, 'vjs-vol-'+i);
   }
@@ -4181,8 +4181,8 @@ vjs.VolumeMenuButton.prototype.onClick = function(){
 
 vjs.VolumeMenuButton.prototype.createEl = function(){
   return vjs.Button.prototype.createEl.call(this, 'div', {
-    className: 'vjs-volume-menu-button vjs-menu-button vjs-control',
-    innerHTML: '<div><span class="vjs-control-text">Mute</span></div>'
+    classNameName: 'vjs-volume-menu-button vjs-menu-button vjs-control',
+    innerHTML: '<div><span className="vjs-control-text">Mute</span></div>'
   });
 };
 vjs.VolumeMenuButton.prototype.update = vjs.MuteToggle.prototype.update;
@@ -4209,7 +4209,7 @@ vjs.PosterImage = vjs.Button.extend({
 
 vjs.PosterImage.prototype.createEl = function(){
   var el = vjs.createEl('div', {
-        className: 'vjs-poster',
+        classNameName: 'vjs-poster',
 
         // Don't want poster to be tabbable.
         tabIndex: -1
@@ -4270,7 +4270,7 @@ vjs.LoadingSpinner = vjs.Component.extend({
 
 vjs.LoadingSpinner.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-loading-spinner'
+    classNameName: 'vjs-loading-spinner'
   });
 };
 /* Big Play Button
@@ -4286,7 +4286,7 @@ vjs.BigPlayButton = vjs.Button.extend();
 
 vjs.BigPlayButton.prototype.createEl = function(){
   return vjs.Button.prototype.createEl.call(this, 'div', {
-    className: 'vjs-big-play-button',
+    classNameName: 'vjs-big-play-button',
     innerHTML: '<span></span>',
     'aria-label': 'play video'
   });
@@ -4296,12 +4296,12 @@ vjs.BigPlayButton.prototype.onClick = function(){
   this.player_.play();
 };
 /**
- * @fileoverview Media Technology Controller - Base class for media playback
+ * @fileoverview Media Technology Controller - Base className for media playback
  * technology controllers like Flash and HTML5
  */
 
 /**
- * Base class for media (HTML5 Video, Flash) controllers
+ * Base className for media (HTML5 Video, Flash) controllers
  * @param {vjs.Player|Object} player  Central player instance
  * @param {Object=} options Options object
  * @constructor
@@ -4566,7 +4566,7 @@ vjs.Html5.prototype.createEl = function(){
     } else {
       el = vjs.createEl('video', {
         id:player.id() + '_html5_api',
-        className:'vjs-tech'
+        classNameName:'vjs-tech'
       });
     }
     // associate the player with the new tag
@@ -4810,7 +4810,7 @@ vjs.Flash = vjs.MediaTechController.extend({
         attributes = vjs.obj.merge({
           'id': objId,
           'name': objId, // Both ID and Name needed or swf to identifty itself
-          'class': 'vjs-tech'
+          'className': 'vjs-tech'
         }, options['attributes'])
     ;
 
@@ -4861,11 +4861,11 @@ vjs.Flash = vjs.MediaTechController.extend({
 
     if (options['iFrameMode'] === true && !vjs.IS_FIREFOX) {
 
-      // Create iFrame with vjs-tech class so it's 100% width/height
+      // Create iFrame with vjs-tech className so it's 100% width/height
       var iFrm = vjs.createEl('iframe', {
         'id': objId + '_iframe',
         'name': objId + '_iframe',
-        'className': 'vjs-tech',
+        'classNameName': 'vjs-tech',
         'scrolling': 'no',
         'marginWidth': 0,
         'marginHeight': 0,
@@ -5354,10 +5354,10 @@ vjs.Player.prototype.addTextTrack = function(kind, label, language, options){
   options['language'] = language;
 
   // HTML5 Spec says default to subtitles.
-  // Uppercase first letter to match class names
+  // Uppercase first letter to match className names
   var Kind = vjs.capitalize(kind || 'subtitles');
 
-  // Create correct texttrack class. CaptionsTrack, etc.
+  // Create correct texttrack className. CaptionsTrack, etc.
   var track = new window['videojs'][Kind + 'Track'](this, options);
 
   tracks.push(track);
@@ -5630,7 +5630,7 @@ vjs.TextTrack.prototype.adjustFontSize = function(){
  */
 vjs.TextTrack.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-' + this.kind_ + ' vjs-text-track'
+    classNameName: 'vjs-' + this.kind_ + ' vjs-text-track'
   });
 };
 
@@ -5752,7 +5752,7 @@ vjs.TextTrack.prototype.onError = function(err){
 };
 
 // Parse the WebVTT text format for cue times.
-// TODO: Separate parser into own class so alternative timed text formats can be used. (TTML, DFXP)
+// TODO: Separate parser into own className so alternative timed text formats can be used. (TTML, DFXP)
 vjs.TextTrack.prototype.parseCues = function(srcContent) {
   var cue, time, text,
       lines = srcContent.split('\n'),
@@ -5962,7 +5962,7 @@ vjs.TextTrack.prototype.updateDisplay = function(){
       i=0,j=cues.length;
 
   for (;i<j;i++) {
-    html += '<span class="vjs-tt-cue">'+cues[i].text+'</span>';
+    html += '<span className="vjs-tt-cue">'+cues[i].text+'</span>';
   }
 
   this.el_.innerHTML = html;
@@ -6022,7 +6022,7 @@ vjs.TextTrackDisplay = vjs.Component.extend({
 
 vjs.TextTrackDisplay.prototype.createEl = function(){
   return vjs.Component.prototype.createEl.call(this, 'div', {
-    className: 'vjs-text-track-display'
+    classNameName: 'vjs-text-track-display'
   });
 };
 
@@ -6037,7 +6037,7 @@ vjs.TextTrackMenuItem = vjs.MenuItem.extend({
   init: function(player, options){
     var track = this.track = options['track'];
 
-    // Modify options for parent MenuItem class's init.
+    // Modify options for parent MenuItem className's init.
     options['label'] = track.label();
     options['selected'] = track.dflt();
     vjs.MenuItem.call(this, player, options);
@@ -6118,7 +6118,7 @@ vjs.TextTrackButton = vjs.MenuButton.extend({
 
 //   // Add a title list item to the top
 //   // menu.el().appendChild(vjs.createEl('li', {
-//   //   className: 'vjs-menu-title',
+//   //   classNameName: 'vjs-menu-title',
 //   //   innerHTML: vjs.capitalize(this.kind_),
 //   //   tabindex: -1
 //   // }));
@@ -6167,7 +6167,7 @@ vjs.CaptionsButton = vjs.TextTrackButton.extend({
 });
 vjs.CaptionsButton.prototype.kind_ = 'captions';
 vjs.CaptionsButton.prototype.buttonText = 'Captions';
-vjs.CaptionsButton.prototype.className = 'vjs-captions-button';
+vjs.CaptionsButton.prototype.classNameName = 'vjs-captions-button';
 
 /**
  * @constructor
@@ -6181,7 +6181,7 @@ vjs.SubtitlesButton = vjs.TextTrackButton.extend({
 });
 vjs.SubtitlesButton.prototype.kind_ = 'subtitles';
 vjs.SubtitlesButton.prototype.buttonText = 'Subtitles';
-vjs.SubtitlesButton.prototype.className = 'vjs-subtitles-button';
+vjs.SubtitlesButton.prototype.classNameName = 'vjs-subtitles-button';
 
 // Chapters act much differently than other text tracks
 // Cues are navigation vs. other tracks of alternative languages
@@ -6197,7 +6197,7 @@ vjs.ChaptersButton = vjs.TextTrackButton.extend({
 });
 vjs.ChaptersButton.prototype.kind_ = 'chapters';
 vjs.ChaptersButton.prototype.buttonText = 'Chapters';
-vjs.ChaptersButton.prototype.className = 'vjs-chapters-button';
+vjs.ChaptersButton.prototype.classNameName = 'vjs-chapters-button';
 
 // Create a menu item for each text track
 vjs.ChaptersButton.prototype.createItems = function(){
@@ -6239,7 +6239,7 @@ vjs.ChaptersButton.prototype.createMenu = function(){
   var menu = this.menu = new vjs.Menu(this.player_);
 
   menu.el_.appendChild(vjs.createEl('li', {
-    className: 'vjs-menu-title',
+    classNameName: 'vjs-menu-title',
     innerHTML: vjs.capitalize(this.kind_),
     tabindex: -1
   }));
@@ -6281,7 +6281,7 @@ vjs.ChaptersTrackMenuItem = vjs.MenuItem.extend({
         cue = this.cue = options['cue'],
         currentTime = player.currentTime();
 
-    // Modify options for parent MenuItem class's init.
+    // Modify options for parent MenuItem className's init.
     options['label'] = cue.text;
     options['selected'] = (cue.startTime <= currentTime && currentTime < cue.endTime);
     vjs.MenuItem.call(this, player, options);

@@ -22,7 +22,7 @@
 				element.siblings('li').find('ul').slideUp();
 			}
 		});
-		$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
+		$('#cssmenu>ul>li.has-sub>a').append('<span className="holder"></span>');
 		(function getColor() {
 			var r, g, b;
 			var textColor = $('#cssmenu').css('color');

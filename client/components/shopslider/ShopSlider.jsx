@@ -1,15 +1,15 @@
 export default function ShopSlider() {
-    return <div class="cart_slider_area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5 col-sm-5 col-xs-12">
-						<div class="cart_heading">
-							<h2 class="breadcumb_head">MEN COLLECTIONS</h2>
+    return <div className="cart_slider_area">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-5 col-sm-5 col-xs-12">
+						<div className="cart_heading">
+							<h2 className="breadcumb_head">MEN COLLECTIONS</h2>
 							<p>COOLEST COLLECTION OF THE SEASON IS ON</p>
-							<div class="breadcumb_box">
-								<ul class="breadcumb_menu">
+							<div className="breadcumb_box">
+								<ul className="breadcumb_menu">
 									<li><a href="">shop</a></li>
-									<li class="active"><a href="">Product Listing</a></li>
+									<li className="active"><a href="">Product Listing</a></li>
 								</ul>
 							</div>
 						</div>
