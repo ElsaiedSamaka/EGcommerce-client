@@ -43,7 +43,7 @@ export default function SimilarProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal71" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal71" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -127,7 +127,7 @@ export default function SimilarProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal72" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal72" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -211,7 +211,7 @@ export default function SimilarProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal73" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal73" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -295,7 +295,7 @@ export default function SimilarProducts() {
 								</div>
 								
 									{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal74" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal74" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">

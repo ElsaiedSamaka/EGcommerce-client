@@ -43,7 +43,7 @@ export default function FeaturedProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal21" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal21" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -125,7 +125,7 @@ export default function FeaturedProducts() {
 									</div>
 								</div>
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal22" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal22" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -208,7 +208,7 @@ export default function FeaturedProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal23" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal23" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -290,7 +290,7 @@ export default function FeaturedProducts() {
 									</div>
 								</div>
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal24" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal24" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">

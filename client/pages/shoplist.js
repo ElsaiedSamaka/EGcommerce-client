@@ -73,7 +73,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal41" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal41" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -157,7 +157,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal42" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal42" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -241,7 +241,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal43" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal43" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -325,7 +325,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal44" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal44" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -411,7 +411,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal45" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal45" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -496,7 +496,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal46" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal46" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -580,7 +580,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal47" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal47" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -664,7 +664,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal48" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal48" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -750,7 +750,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal49" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal49" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -834,7 +834,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal50" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal50" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -918,7 +918,7 @@ export default function shoplist() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal51" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal51" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -1002,7 +1002,7 @@ export default function shoplist() {
 								</div>
 								
 									{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal52" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal52" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">

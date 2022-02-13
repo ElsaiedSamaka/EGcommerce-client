@@ -43,7 +43,7 @@ export default function LatestProducts() {
 								</div>
 								
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal25" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal25" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -125,7 +125,7 @@ export default function LatestProducts() {
 									</div>
 								</div>
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal26" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal26" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -207,7 +207,7 @@ export default function LatestProducts() {
 									</div>
 								</div>
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal27" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal27" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
@@ -289,7 +289,7 @@ export default function LatestProducts() {
 									</div>
 								</div>
 								{/* <!-- Modal --> */}
-									<div className="modal fade" id="myModal28" tabindex="-1" role="dialog" aria-hidden="true">
+									<div className="modal fade" id="myModal28" tabIndex="-1" role="dialog" aria-hidden="true">
 									  <div className="modal-dialog">
 										<div className="modal-content">
 											<div className="modal-body">
