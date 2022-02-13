@@ -8,8 +8,8 @@ export default function ShopSlider() {
 							<p>COOLEST COLLECTION OF THE SEASON IS ON</p>
 							<div className="breadcumb_box">
 								<ul className="breadcumb_menu">
-									<li><a href="">shop</a></li>
-									<li className="active"><a href="">Product Listing</a></li>
+									<li><a >shop</a></li>
+									<li className="active"><a >Product Listing</a></li>
 								</ul>
 							</div>
 						</div>

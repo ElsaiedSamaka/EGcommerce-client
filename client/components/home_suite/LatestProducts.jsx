@@ -14,18 +14,18 @@ export default function LatestProducts() {
 							<div className="col-md-3 col-sm-3 col-xs-12">
 								<div className="single_suite">
 									<div className="single_suite_img1 hover_img effect">
-										<a href="shop-detail.html"><img src="images/suite1.jpg" alt="" /></a>
+										<a href="product_detail"><img src="images/suite1.jpg" alt="" /></a>
 										<div className="cc_hover">
 											<ul className="cc_hover_ul">
-												<li className="h_cart"><a className="fa fa-shopping-cart" href="cart.html"></a></li>
+												<li className="h_cart"><a className="fa fa-shopping-cart" href="product_checkout"></a></li>
 												<li className="h_heart"><a className="fa fa-heart" href="#"></a></li>
-												<li className="h_search"><a data-toggle="modal" data-target="#myModal25" className="fa fa-search" href=""></a></li>
+												<li className="h_search"><a data-toggle="modal" data-target="#myModal25" className="fa fa-search" ></a></li>
 											</ul>
 										</div>
 										<div className="common_overlay"></div>
 									</div>
 									<div className="single_suite_text">
-										<a href="shop-detail.html"><h3>CLASSIS SUITE</h3></a>
+										<a href="product_detail"><h3>CLASSIS SUITE</h3></a>
 									</div>
 									<div className="single_suite_left">
 										<div className="suite_left_del"><del>$17.99</del></div>
@@ -33,11 +33,11 @@ export default function LatestProducts() {
 									</div>
 									<div className="single_suite_right">
 										<ul>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star-o" href=""></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star-o" ></a></li>
 										</ul>
 									</div>
 								</div>
@@ -48,11 +48,11 @@ export default function LatestProducts() {
 										<div className="modal-content">
 											<div className="modal-body">
 												<div className="m_img_left">
-													<a href="shop-detail.html"><img src="/images/suite1.jpg" alt="" /></a>
+													<a href="product_detail"><img src="/images/suite1.jpg" alt="" /></a>
 												</div>
 												<div className="p_detail_right">
 													<div className="p_slider_box_details">
-														<a href="shop-detail.html"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
+														<a href="product_detail"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
 														<div className="single_suite_right">
 															<ul>
 																<li><a className="fa fa-star" href="#"></a></li>
@@ -97,18 +97,18 @@ export default function LatestProducts() {
 							<div className="col-md-3 col-sm-3 col-xs-12">
 								<div className="single_suite">
 									<div className="single_suite_img hover_img effect">
-										<a href="shop-detail.html"><img src="/images/suite2.jpg" alt="" /></a>
+										<a href="product_detail"><img src="/images/suite2.jpg" alt="" /></a>
 										<div className="cc_hover">
 											<ul className="cc_hover_ul">
-												<li className="h_cart"><a className="fa fa-shopping-cart" href="cart.html"></a></li>
+												<li className="h_cart"><a className="fa fa-shopping-cart" href="product_checkout"></a></li>
 												<li className="h_heart"><a className="fa fa-heart" href="#"></a></li>
-												<li className="h_search"><a data-toggle="modal" data-target="#myModal26" className="fa fa-search" href=""></a></li>
+												<li className="h_search"><a data-toggle="modal" data-target="#myModal26" className="fa fa-search" ></a></li>
 											</ul>
 										</div>
 										<div className="common_overlay"></div>
 									</div>
 									<div className="single_suite_text">
-										<a href="shop-detail.html"><h3>CORPORATE FITTINGS</h3></a>
+										<a href="product_detail"><h3>CORPORATE FITTINGS</h3></a>
 									</div>
 									<div className="single_suite_left">
 										<div className="suite_left_del"><del>$17.99</del></div>
@@ -116,11 +116,11 @@ export default function LatestProducts() {
 									</div>
 									<div className="single_suite_right">
 										<ul>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star-o" href=""></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star-o" ></a></li>
 										</ul>
 									</div>
 								</div>
@@ -130,11 +130,11 @@ export default function LatestProducts() {
 										<div className="modal-content">
 											<div className="modal-body">
 												<div className="m_img_left">
-													<a href="shop-detail.html"><img src="/images/suite2.jpg" alt="" /></a>
+													<a href="product_detail"><img src="/images/suite2.jpg" alt="" /></a>
 												</div>
 												<div className="p_detail_right">
 													<div className="p_slider_box_details">
-														<a href="shop-detail.html"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
+														<a href="product_detail"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
 														<div className="single_suite_right">
 															<ul>
 																<li><a className="fa fa-star" href="#"></a></li>
@@ -179,18 +179,18 @@ export default function LatestProducts() {
 							<div className="col-md-3 col-sm-3 col-xs-12">
 								<div className="single_suite">
 									<div className="single_suite_img hover_img effect">
-										<a href="shop-detail.html"><img src="/images/suite3.jpg" alt="" /></a>
+										<a href="product_detail"><img src="/images/suite3.jpg" alt="" /></a>
 										<div className="cc_hover">
 											<ul className="cc_hover_ul">
-												<li className="h_cart"><a className="fa fa-shopping-cart" href="cart.html"></a></li>
+												<li className="h_cart"><a className="fa fa-shopping-cart" href="product_checkout"></a></li>
 												<li className="h_heart"><a className="fa fa-heart" href="#"></a></li>
-												<li className="h_search"><a data-toggle="modal" data-target="#myModal27" className="fa fa-search" href=""></a></li>
+												<li className="h_search"><a data-toggle="modal" data-target="#myModal27" className="fa fa-search" ></a></li>
 											</ul>
 										</div>
 										<div className="common_overlay"></div>
 									</div>
 									<div className="single_suite_text">
-										<a href="shop-detail.html"><h3>BLUE CASUAL SUITE</h3></a>
+										<a href="product_detail"><h3>BLUE CASUAL SUITE</h3></a>
 									</div>
 									<div className="single_suite_left">
 										<div className="suite_left_del"><del>$17.99</del></div>
@@ -198,11 +198,11 @@ export default function LatestProducts() {
 									</div>
 									<div className="single_suite_right">
 										<ul>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star-o" href=""></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star-o" ></a></li>
 										</ul>
 									</div>
 								</div>
@@ -212,11 +212,11 @@ export default function LatestProducts() {
 										<div className="modal-content">
 											<div className="modal-body">
 												<div className="m_img_left">
-													<a href="shop-detail.html"><img src="/images/suite3.jpg" alt="" /></a>
+													<a href="product_detail"><img src="/images/suite3.jpg" alt="" /></a>
 												</div>
 												<div className="p_detail_right">
 													<div className="p_slider_box_details">
-														<a href="shop-detail.html"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
+														<a href="product_detail"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
 														<div className="single_suite_right">
 															<ul>
 																<li><a className="fa fa-star" href="#"></a></li>
@@ -261,18 +261,18 @@ export default function LatestProducts() {
 							<div className="col-md-3 col-sm-3 col-xs-12">
 								<div className="single_suite">
 									<div className="single_suite_img hover_img effect">
-										<a href="shop-detail.html"><img src="/images/suite4.jpg" alt="" /></a>
+										<a href="product_detail"><img src="/images/suite4.jpg" alt="" /></a>
 										<div className="cc_hover">
 											<ul className="cc_hover_ul">
-												<li className="h_cart"><a className="fa fa-shopping-cart" href="cart.html"></a></li>
+												<li className="h_cart"><a className="fa fa-shopping-cart" href="product_checkout"></a></li>
 												<li className="h_heart"><a className="fa fa-heart" href="#"></a></li>
-												<li className="h_search"><a data-toggle="modal" data-target="#myModal28" className="fa fa-search" href=""></a></li>
+												<li className="h_search"><a data-toggle="modal" data-target="#myModal28" className="fa fa-search" ></a></li>
 											</ul>
 										</div>
 										<div className="common_overlay"></div>
 									</div>
 									<div className="single_suite_text">
-										<a href="shop-detail.html"><h3>CLASSIS SUITE</h3></a>
+										<a href="product_detail"><h3>CLASSIS SUITE</h3></a>
 									</div>
 									<div className="single_suite_left">
 										<div className="suite_left_del"><del>$17.99</del></div>
@@ -280,11 +280,11 @@ export default function LatestProducts() {
 									</div>
 									<div className="single_suite_right">
 										<ul>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star" href=""></a></li>
-											<li><a className="fa fa-star-o" href=""></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star" ></a></li>
+											<li><a className="fa fa-star-o" ></a></li>
 										</ul>
 									</div>
 								</div>
@@ -294,11 +294,11 @@ export default function LatestProducts() {
 										<div className="modal-content">
 											<div className="modal-body">
 												<div className="m_img_left">
-													<a href="shop-detail.html"><img src="/images/suite4.jpg" alt="" /></a>
+													<a href="product_detail"><img src="/images/suite4.jpg" alt="" /></a>
 												</div>
 												<div className="p_detail_right">
 													<div className="p_slider_box_details">
-														<a href="shop-detail.html"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
+														<a href="product_detail"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
 														<div className="single_suite_right">
 															<ul>
 																<li><a className="fa fa-star" href="#"></a></li>

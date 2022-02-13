@@ -14,9 +14,9 @@ export default function Footer() {
 											lorem eget risus.</p>
 											<div className="footer_social_icon">
 												<ul id="foot_social_icon">
-													<li><a className="fa fa-facebook" href=""></a></li>
-													<li><a className="fa fa-twitter" href=""></a></li>
-													<li><a className="fa fa-google-plus" href=""></a></li>
+													<li><a className="fa fa-facebook" ></a></li>
+													<li><a className="fa fa-twitter" ></a></li>
+													<li><a className="fa fa-google-plus" ></a></li>
 												</ul>
 											</div>
 										</div>
@@ -26,15 +26,15 @@ export default function Footer() {
 											<h3>USEFUL LINKS</h3>
 											<div className="footer_wid_lists">
 												<ul id="footer_wid_list">
-													<li><a href="">Men & Women</a></li>
-													<li><a href="">Privacy Policy</a></li>
-													<li><a href="">Children</a></li>
-													<li><a href="">Disclaimer</a></li>
-													<li><a href="">My Account</a></li>
-													<li><a href="">Terms of Use</a></li>
-													<li><a href="">Top Seller</a></li>
-													<li><a href="">Sitemap</a></li>
-													<li><a href="">Latest Products</a></li>
+													<li><a >Men & Women</a></li>
+													<li><a >Privacy Policy</a></li>
+													<li><a >Children</a></li>
+													<li><a >Disclaimer</a></li>
+													<li><a >My Account</a></li>
+													<li><a >Terms of Use</a></li>
+													<li><a >Top Seller</a></li>
+													<li><a >Sitemap</a></li>
+													<li><a >Latest Products</a></li>
 												</ul>
 											</div>
 										</div>
@@ -59,8 +59,8 @@ export default function Footer() {
 											tetur adipiscing elit. Ut semper 
 											lorem eget risus.</p>
 											<div className="footer_ph_contact">
-												<p><span>Phone :</span><a href=""> +20 115 05 67 130</a></p>
-												<p><span>Email :</span><a href=""> loremiipsum99@gmail.com</a></p>
+												<p><span>Phone :</span><a > +20 115 05 67 130</a></p>
+												<p><span>Email :</span><a > loremiipsum99@gmail.com</a></p>
 											</div>
 										</div>
 									</div>
@@ -75,16 +75,16 @@ export default function Footer() {
 					<div className="row">
 						<div className="col-md-6 col-sm-6 col-xs-12">
 							<div className="footer_bottom_text">
-								<p>All Rights Reserved by <a href="">Elsaied Samaka Dev.</a></p>
+								<p>All Rights Reserved by <a >Elsaied Samaka Dev.</a></p>
 							</div>
 						</div>
 						<div className="col-md-6 col-sm-6 col-xs-12">
 							<div className="footer_logos">
-								<a href=""><img src="images/footer_logo1.jpg" alt="footer logo1" /></a>
-								<a href=""><img src="images/footer_logo2.jpg" alt="footer logo2" /></a>
-								<a href=""><img src="images/footer_logo3.jpg" alt="footer logo3" /></a>
-								<a href=""><img src="images/footer_logo4.jpg" alt="footer logo4" /></a>
-								<a href=""><img src="images/footer_logo5.jpg" alt="footer logo5" /></a>
+								<a ><img src="images/footer_logo1.jpg" alt="footer logo1" /></a>
+								<a ><img src="images/footer_logo2.jpg" alt="footer logo2" /></a>
+								<a ><img src="images/footer_logo3.jpg" alt="footer logo3" /></a>
+								<a ><img src="images/footer_logo4.jpg" alt="footer logo4" /></a>
+								<a ><img src="images/footer_logo5.jpg" alt="footer logo5" /></a>
 							</div>
 						</div>
 					</div>

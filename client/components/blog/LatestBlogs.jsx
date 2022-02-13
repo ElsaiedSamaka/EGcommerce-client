@@ -14,7 +14,7 @@ export default function LatestBlogs() {
 							<div className="col-md-4 col-sm-4 col-xs-12">
 								<div className="single_latest_blog">
 									<div className="blog_hover_img">
-										<a href="blog-detail.html">
+										<a href="blogdetail">
 											<img src="/images/home_blog1.jpg" alt="" />
 										</a>
 										<div className="b_hover_box">
@@ -23,7 +23,7 @@ export default function LatestBlogs() {
 										</div>
 									</div>
 									<div className="single_latest_blog_text">
-									<a href="blog-detail.html"><h3>PHONIX SUNGLASSES</h3></a>
+									<a href="blogdetail"><h3>PHONIX SUNGLASSES</h3></a>
 									<p>Lorem ipsum dolor sit amet, consectetur adipis
 									cing elit. Ut semper lorem eget risus.</p>
 									</div>
@@ -31,21 +31,21 @@ export default function LatestBlogs() {
 										<p>April 23, 2020</p>
 									</div>
 									<div className="single_hblog_right">
-										<a href="blog-detail.html">Konw More</a>
+										<a href="blogdetail">Konw More</a>
 									</div>
 								</div>
 							</div>
 							<div className="col-md-4 col-sm-4 col-xs-12">
 								<div className="single_latest_blog">
 									<div className="blog_hover_img">
-										<a href="blog-detail.html"><img src="/images/home_blog2.jpg" alt="" /></a>
+										<a href="blogdetail"><img src="/images/home_blog2.jpg" alt="" /></a>
 										<div className="b_hover_box">
 											<h4>PHONIX SUNGLASSES</h4>
 											<p>Lorem ipsum dolor sit amet, consectetur</p>
 										</div>
 									</div>
 									<div className="single_latest_blog_text">
-									<a href="blog-detail.html"><h3>PHONIX SUNGLASSES</h3></a>
+									<a href="blogdetail"><h3>PHONIX SUNGLASSES</h3></a>
 									<p>Lorem ipsum dolor sit amet, consectetur adipis
 									cing elit. Ut semper lorem eget risus.</p>
 									</div>
@@ -53,21 +53,21 @@ export default function LatestBlogs() {
 										<p>April 23, 2022</p>
 									</div>
 									<div className="single_hblog_right">
-										<a href="blog-detail.html">Konw More</a>
+										<a href="blogdetail">Konw More</a>
 									</div>
 								</div>
 							</div>
 							<div className="col-md-4 col-sm-4 col-xs-12">
 								<div className="single_latest_blog">
 									<div className="blog_hover_img">
-										<a href="blog-detail.html"><img src="/images/home_blog3.jpg" alt="" /></a>
+										<a href="blogdetail"><img src="/images/home_blog3.jpg" alt="" /></a>
 										<div className="b_hover_box">
 											<h4>PHONIX SUNGLASSES</h4>
 											<p>Lorem ipsum dolor sit amet, consectetur</p>
 										</div>
 									</div>
 									<div className="single_latest_blog_text">
-									<a href="blog-detail.html"><h3>PHONIX SUNGLASSES</h3></a>
+									<a href="blogdetail"><h3>PHONIX SUNGLASSES</h3></a>
 									<p>Lorem ipsum dolor sit amet, consectetur adipis
 									cing elit. Ut semper lorem eget risus.</p>
 									</div>
@@ -75,7 +75,7 @@ export default function LatestBlogs() {
 										<p>April 23, 2015</p>
 									</div>
 									<div className="single_hblog_right">
-										<a href="blog-detail.html">Konw More</a>
+										<a href="blogdetail">Konw More</a>
 									</div>
 								</div>
 							</div>

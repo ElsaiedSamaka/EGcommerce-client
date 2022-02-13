@@ -30,11 +30,11 @@ export default function Testimonial() {
 										<span>JOHNATHON DOE</span>
 										<div className="testi_stars">
 											<ul>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star-o" href=""></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star-o" ></a></li>
 											</ul>
 										</div>
 									</div>
@@ -55,11 +55,11 @@ export default function Testimonial() {
 										<span>JOHNATHON DOE</span>
 										<div className="testi_stars">
 											<ul>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star-o" href=""></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star-o" ></a></li>
 											</ul>
 										</div>
 									</div>
@@ -80,11 +80,11 @@ export default function Testimonial() {
 										<span>JOHNATHON DOE</span>
 										<div className="testi_stars">
 											<ul>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star" href=""></a></li>
-												<li><a className="fa fa-star-o" href=""></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star" ></a></li>
+												<li><a className="fa fa-star-o" ></a></li>
 											</ul>
 										</div>
 									</div>

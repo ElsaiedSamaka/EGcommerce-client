@@ -12,8 +12,8 @@ export default function product_checkout() {
 							<p>COOLEST COLLECTION OF THE SEASON IS ON</p>
 							<div className="breadcumb_box">
 								<ul className="breadcumb_menu">
-									<li><a href="">shop</a></li>
-									<li className="active"><a href="">Checkout</a></li>
+									<li><a >shop</a></li>
+									<li className="active"><a >Checkout</a></li>
 								</ul>
 							</div>
 						</div>

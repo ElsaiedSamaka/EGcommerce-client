@@ -4,7 +4,7 @@ export default function Header() {
 				<div className="row">
 					<div className="col-md-3 col-sm-3 col-xs-12">
 						<div className="logo">
-							<a href="index.html"><img src="/images/logo.png" alt="logo" /></a>
+							<a href="/"><img src="/images/logo.png" alt="logo" /></a>
 						</div>
 						<div className="devider">
 							<img src="/images/devider.png" alt="devider" />
@@ -19,18 +19,18 @@ export default function Header() {
 					<div className="col-md-5 col-sm-6 col-xs-12">
 						<div className="header_social">
 							<ul id="head_social">
-								<li><a className="fa fa-facebook" href=""></a></li>
-								<li><a className="fa fa-twitter" href=""></a></li>
-								<li><a className="fa fa-google-plus" href=""></a></li>
+								<li><a className="fa fa-facebook" ></a></li>
+								<li><a className="fa fa-twitter" ></a></li>
+								<li><a className="fa fa-google-plus" ></a></li>
 							</ul>
 						</div>
 						<div className="header_currency">
 							<ul id="head_currency">
-								<li><a href="">usd <i className="fa fa-chevron-down"></i></a>
+								<li><a >usd <i className="fa fa-chevron-down"></i></a>
 									<ul id="currency_dropdown">
-										<li><a href="">eur</a></li>
-										<li><a href="">dzd</a></li>
-										<li><a href="">amd</a></li>
+										<li><a >eur</a></li>
+										<li><a >dzd</a></li>
+										<li><a >amd</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -41,10 +41,10 @@ export default function Header() {
 							</div>
 							<div className="head_cart_text">
 								<div className="head_cart_text_top">
-									<a href="cart.html"><p>SHOPPING CART (3)</p></a>
+									<a href="product_checkout"><p>SHOPPING CART (3)</p></a>
 								</div>
 								<div className="head_cart_text_bottom">
-									<a href="checkout.html"><p>CHECKOUT</p></a>
+									<a href="product_checkout"><p>CHECKOUT</p></a>
 								</div>
 							</div>
 						</div>

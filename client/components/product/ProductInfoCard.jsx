@@ -47,11 +47,11 @@ export default function ProductInfoCard() {
 												</div>
 												<div className="review_heading_right">
 													<ul id="review_heading_star">
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
 													</ul>
 												</div>
 											</div>
@@ -62,11 +62,11 @@ export default function ProductInfoCard() {
 												<div className="single_review_text">
 													<h4>A Stunning Beauty!</h4>
 													<ul id="single_review_star">
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
-														<li><a className="fa fa-star" href=""></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
+														<li><a className="fa fa-star" ></a></li>
 													</ul>
 													<p>Semper orci etiam ac ultricies ante. Donec lobortis variusjusto et. Curabitur egestas aliquet massa non elementum. Quisque at risus nisl. Aliquam erat volutpat. Suspendisse potenti. Nullam porta faucibus elit.</p>
 													<div className="review_italic">

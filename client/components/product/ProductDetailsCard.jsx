@@ -30,7 +30,7 @@ export default function ProductDetailsCard() {
 								<div className="col-md-7 col-sm-7 col-xs-cc2">
 									<div className="p_detail_right">
 										<div className="p_slider_box_details">
-											<a href="shop-detail.html"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
+											<a href="product_detail"><h3>GRAY COLOR CORPORATE SUITE</h3></a>
 											<div className="single_suite_right">
 												<ul>
 													<li><a className="fa fa-star" href="#"></a></li>
@@ -74,7 +74,7 @@ export default function ProductDetailsCard() {
 												<input type='button' value='-' className='qtyminus'/>
 											</form>
 											<div className="in_stock">
-												<a href="">In stock</a>
+												<a >In stock</a>
 											</div>
 										</div>
 										<div className="pdq_right">

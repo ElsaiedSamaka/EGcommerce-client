@@ -20,9 +20,9 @@ export default function AddressDetail() {
 										
 										<div className="contact_page_social">
 											<ul>
-												<li><a className="fa fa-facebook" href=""></a></li>
-												<li><a className="fa fa-twitter" href=""></a></li>
-												<li><a className="fa fa-google-plus" href=""></a></li>
+												<li><a className="fa fa-facebook" ></a></li>
+												<li><a className="fa fa-twitter" ></a></li>
+												<li><a className="fa fa-google-plus" ></a></li>
 											</ul>
 										</div>
 									</div>
@@ -38,9 +38,9 @@ export default function AddressDetail() {
 										
 										<div className="contact_page_social">
 											<ul id="contact_page_soci">
-												<li><a className="fa fa-facebook" href=""></a></li>
-												<li><a className="fa fa-twitter" href=""></a></li>
-												<li><a className="fa fa-google-plus" href=""></a></li>
+												<li><a className="fa fa-facebook" ></a></li>
+												<li><a className="fa fa-twitter" ></a></li>
+												<li><a className="fa fa-google-plus" ></a></li>
 											</ul>
 										</div>
 									</div>

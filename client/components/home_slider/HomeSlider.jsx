@@ -11,10 +11,10 @@ export default function HomeSlider() {
 						<p>Lorem ipsum dolor sit consectetur amet adipi. Ut semper lorem risus.</p>
 						<div className="home2_special_bottom">
 							<div className="home2_special_bottom_left">
-								<a href="">GO TO COLLECTION</a>
+								<a >GO TO COLLECTION</a>
 							</div>
 							<div className="home2_special_bottom_right">
-								<a href="">OTHER CLOTHERS</a>
+								<a >OTHER CLOTHERS</a>
 							</div>
 						</div>
 					</div>
@@ -56,10 +56,10 @@ export default function HomeSlider() {
 							<p>Lorem ipsum dolor sit amet, consectetur adipi<br/>elit. Ut semper lorem eget risus.</p>
 							<div className="home2_special_bottom">
 								<div className="home2_special_bottom_left">
-									<a href="">GO TO COLLECTION</a>
+									<a >GO TO COLLECTION</a>
 								</div>
 								<div className="home2_special_bottom_right">
-									<a href="">OTHER CLOTHERS</a>
+									<a >OTHER CLOTHERS</a>
 								</div>
 							</div>
 						</div>
