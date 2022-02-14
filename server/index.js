@@ -7,7 +7,6 @@ const connect = (url) => {
 };
 connect(config.db.prod);
 mongoose.connection.on("error", console.log);
-mongoose.connection.on("success", console.log);
 
 app.listen(config.port, () => {
   console.log(`app working on ${config.port}`);
