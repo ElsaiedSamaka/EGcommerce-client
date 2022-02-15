@@ -5,8 +5,14 @@ const config = require("./config");
 const connect = (url) => {
   return mongoose.connect(url, config.db.options);
 };
-connect(config.db.prod);
-mongoose.connection.on("error", console.log);
+try {
+  connect(config.db.prod);
+  mongoose.connection.once("open", () => {
+    console.log("MONGO 200");
+  });
+} catch (error) {
+  mongoose.connection.on("error", console.log(error));
+}
 
 app.listen(config.port, () => {
   console.log(`app working on ${config.port}`);
