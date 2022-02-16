@@ -1,5 +1,6 @@
 const Product = require( './models/product' )
 const Category = require('./models/category')
+var moment = require("moment");
 
 const router = require( "express" ).Router();
 router.get("/",async (req, res) => {
@@ -12,7 +13,18 @@ router.get("/",async (req, res) => {
     console.log(error);
     res.redirect("/");
   }
+} );
+
+router.get("/:slug/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id).populate("category");
+    res.send( product );
+  } catch (error) {
+    console.log(error);
+    return res.redirect("/");
+  }
 });
+
 module.exports = (app) => {
   app.use("/api", router);
 };
