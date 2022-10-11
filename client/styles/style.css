@@ -695,8 +695,7 @@ a:hover {
   opacity: 1;
   transition: 0.3s;
 }
-.header_currency ul li ul#currency_dropdown li {
-}
+
 .header_currency ul li ul#currency_dropdown li a {
   color: #a0a0a0;
   font-size: 13px;
@@ -725,7 +724,7 @@ a:hover {
 .head_cart_text {
   border: 1px solid #000;
   overflow: hidden;
-  width: 70%;
+  width: 50%;
 }
 .head_cart_text_top {
   border-bottom: 1px solid #000;

@@ -12,19 +12,18 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>EgyEcommerce</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
       </Head>
       <body>
-<Layout>
-      <HomeSlider />
-        <FeaturedProducts />
+        <Layout>
+          <HomeSlider />
+          <FeaturedProducts />
 
-        <LatestProducts />
-        <Testimonial />
-        <LatestBlogs />
-        <Partners />
+          <LatestProducts />
+          <Testimonial />
+          <LatestBlogs />
+          <Partners />
         </Layout>
       </body>
     </div>
