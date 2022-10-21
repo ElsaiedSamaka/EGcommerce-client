@@ -599,10 +599,15 @@ a:hover {
   padding-bottom: 26px;
   padding-top: 27px;
 }
-.logo {
+.header_logo {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding:15px 30px;
   float: left;
-  margin-right: 23px;
   width: 88%;
+  margin: 0 auto;
 }
 .devider {
   float: left;

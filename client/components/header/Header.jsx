@@ -4,10 +4,8 @@ export default function Header() {
       <div className="container">
         <div className="row">
           <div className="col-md-3 col-sm-3 col-xs-12">
-            <div className="logo">
-              <a href="/">
-                <img src="/images/logo.png" alt="logo" />
-              </a>
+            <div className="header_logo">
+                <h2>Egycommerce</h2>
             </div>
             <div className="devider">
               <img src="/images/devider.png" alt="devider" />

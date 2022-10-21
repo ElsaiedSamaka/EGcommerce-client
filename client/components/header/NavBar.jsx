@@ -52,6 +52,57 @@ export default function NavBar() {
               <ul id='mainmenua_nav'>
                 <li>
                   <a href='shoplist'>MEN</a>
+                  <div className='mega-menu'>
+                    <div className='sub-menu-left'>
+                      <h4>MAIN CATEGORY HERE</h4>
+                      <ul className='dropdown-inner'>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>MODERN Suites
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>Casual Suites
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>Classic Suites
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>Casual Jackets
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>Cool T-Shirts
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>Fashion Shirts
+                          </a>
+                        </li>
+                        <li>
+                          <a href='product_detail'>
+                            <i className='fa fa-angle-right'></i>CASUAL SHIRTS
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className='sub-menu-right'>
+                      <img src='images/homepage-dropdowns.jpg' alt='' />
+                      <div className='d_off'>
+                        <h2>
+                          20 <span className='percent'>% </span>
+                          <span>off</span>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
                 </li>
                 <li>
                   <a href='shoplist'>WOMEN</a>
@@ -110,7 +161,7 @@ export default function NavBar() {
                 <li>
                   <a href='shoplist'>CHILDREN</a>
                 </li>
-                {/* <li><a >Pages</a>
+                <li><a >Pages</a>
 									<ul className="sub-menu2">
 										<li><a href="shoplist"><i className="fa fa-angle-right"></i>Shop page</a></li>
 										<li><a href="shop-listing2"><i className="fa fa-angle-right"></i>Shop without sidebar</a></li>
@@ -120,7 +171,7 @@ export default function NavBar() {
 										<li><a href="blog"><i className="fa fa-angle-right"></i>Blog Page</a></li>
 										<li><a href="shortcodes"><i className="fa fa-angle-right"></i>Shortcodes Page</a></li>
 									</ul>
-								</li> */}
+								</li>
                 <li className='last-child'>
                   <a href='contact'>CONTACT</a>
                 </li>
@@ -165,7 +216,7 @@ export default function NavBar() {
             <div className='col-md-12 col-sm-12 col-xs-12'>
               <ul className='ofm'>
                 <li className='m_nav'>
-                  <i className='fa fa-bars'></i> Woodland
+                  <i className='fa fa-bars'></i> Egycommerce
                 </li>
               </ul>
 

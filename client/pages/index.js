@@ -7,18 +7,17 @@ import Partners from "../components/partners/Partners";
 import Testimonial from "../components/testimonial/Testimonial";
 import Layout from "../components/util/Layout";
 
-
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div>
       <Head>
-        <title>EgyEcommerce</title>
+        <title>Egycommerce</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body>
         <Layout>
           <HomeSlider />
-          <FeaturedProducts />
+          <FeaturedProducts products={products} />
 
           <LatestProducts />
           <Testimonial />
@@ -28,4 +27,14 @@ export default function Home() {
       </body>
     </div>
   );
+}
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:4000/products");
+  const products = await res.json();
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
