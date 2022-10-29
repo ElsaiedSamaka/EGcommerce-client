@@ -9,29 +9,28 @@ import Layout from "../components/util/Layout";
 
 export default function Home({ products }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Egycommerce</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body>
         <Layout>
-          <HomeSlider />
+          <HomeSlider products={products} />
           <FeaturedProducts products={products} />
-
           <LatestProducts />
           <Testimonial />
           <LatestBlogs />
           <Partners />
         </Layout>
       </body>
-    </div>
+    </>
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("http://localhost:4000/products");
-  const products = await res.json();
-
+  const result = await res.json();
+  const products = result.slice(0, 4);
   return {
     props: {
       products,

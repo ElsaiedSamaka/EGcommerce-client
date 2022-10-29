@@ -5,11 +5,11 @@ var moment = require("moment");
 const router = require( "express" ).Router();
 router.get("/",async (req, res) => {
     try {
-    const products = await Product.find({})
-      .sort("-createdAt")
-      .populate("category");
-      res.send( products );
-  } catch (error) {
+      const products = await Product.find({});
+      // .sort("-createdAt")
+      // .populate("category");
+      res.send(products);
+    } catch (error) {
     console.log(error);
     res.redirect("/");
   }

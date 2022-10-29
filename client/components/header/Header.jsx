@@ -5,10 +5,10 @@ export default function Header() {
         <div className="row">
           <div className="col-md-3 col-sm-3 col-xs-12">
             <div className="header_logo">
-                <h2>Egycommerce</h2>
+              <h2>Egycommerce</h2>
             </div>
             <div className="devider">
-              <img src="/images/devider.png" alt="devider" />
+              {/* <img src="/images/devider.png" alt="devider" /> */}
             </div>
           </div>
           <div className="col-md-4 col-sm-3 col-xs-12">

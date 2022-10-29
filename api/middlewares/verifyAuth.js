@@ -38,7 +38,7 @@ const verifyAdminAccess = (req, res, next) => {
 	verifyToken(req, res, () => {
 		if (req.user.isAdmin) next()
 		else {
-			res.status(403).json({
+			res.status(403).jsfbon({
 				status: "error",
 				message: "you are not authorized to perform this action",
 			})

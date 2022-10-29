@@ -6,7 +6,7 @@ const connect = (url) => {
   return mongoose.connect(url, config.db.options);
 };
 try {
-  connect(config.db.prod);
+  connect(config.db.test);
   mongoose.connection.once("open", () => {
     console.log("MONGO 200");
   });
