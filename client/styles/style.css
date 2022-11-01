@@ -1295,7 +1295,7 @@ ul.dropdown-inner li a i {
   z-index: 9;
 }
 .home_testimonial_dupli {
-  background: rgba(0, 0, 0, 0) url("/images/homepage_caro_bg.jpg") no-repeat
+  background: rgba(0, 0, 0, 0) url("/images/pyramids.jpg") no-repeat
     scroll center center / cover;
   height: 585px;
 }
@@ -1462,7 +1462,7 @@ ul.dropdown-inner li a i {
   z-index: 3;
 }
 .home_testimonial_area {
-  background: url("/images/homepage_caro_bg.jpg") no-repeat fixed center center
+  background: url("/images/pyramids.jpg") no-repeat fixed center center
     rgba(0, 0, 0, 0);
   height: 585px;
 }
