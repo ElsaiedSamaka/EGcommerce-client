@@ -18,7 +18,7 @@ export default function Home({ products }) {
         <Layout>
           <HomeSlider products={products} />
           <FeaturedProducts products={products} />
-          <LatestProducts />
+          <LatestProducts products={products} />
           <Testimonial />
           <LatestBlogs />
           <Partners />

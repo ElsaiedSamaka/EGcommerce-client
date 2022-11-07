@@ -4787,3 +4787,13 @@ ul.cc_hover_ul li.h_search {
 /*=========================
 	END of CUSTOM style.
 ===========================*/
+.actions{
+  text-align:center;
+}
+svg{
+  margin:2px;
+}
+svg:hover{
+ cursor: pointer;
+ color: #40bdc8;
+}
