@@ -1134,10 +1134,10 @@ ul.dropdown-inner li a i {
 
 /* mobile menu style */
 .only-for-mobile {
-  display: none !important;
+  /* display: none !important; */
 }
 .mobi-menu {
-  display: none;
+  /* display: none; */
 }
 .mobi-menu {
   left: 0;

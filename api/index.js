@@ -19,11 +19,13 @@ const app = express()
 
 
 // mongodb
-mongoose.connect(process.env.DB_URL, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-}).then(() => console.log("Connected to database"))
-	.catch(err => console.error(err))
+mongoose
+  .connect(process.env.DB_DEV_URL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .then(() => console.log("Connected to database"))
+  .catch((err) => console.error(err));
 
 
 // global middlewares
