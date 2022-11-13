@@ -56,9 +56,17 @@ export default function HomeSlider({ products }) {
                 <div className="home3_slider_image">
                   <div className="slider3-img cc-h-layer">
                     {product.image ? (
-                      <img src={product.image} alt={product.title} />
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        Loading="lazy"
+                      />
                     ) : (
-                      <img src="/images/homepage2_s4.jpg" alt={product.title} />
+                      <img
+                        src="/images/homepage2_s4.jpg"
+                        alt={product.title}
+                        Loading="lazy"
+                      />
                     )}
 
                     <div className="b_hover_box">

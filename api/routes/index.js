@@ -1,6 +1,5 @@
 const express = require("express");
 const csrf = require("csurf");
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const Product = require("../models/Product.model");
 const Category = require("../models/Category.model");
 const Cart = require("../models/Cart.model");
@@ -74,6 +73,7 @@ router.get("/add-to-cart/:id", async (req, res) => {
     }
     req.session.cart = cart;
     res.redirect(req.headers.referer);
+    console.log(req.headers.referer);
   } catch (err) {
     console.log(err.message);
     res.json({ err });
@@ -156,6 +156,7 @@ router.get("/reduce/:id", async function (req, res, next) {
       }
     }
     res.redirect(req.headers.referer);
+    console.log(req.headers.referer);
   } catch (err) {
     console.log(err.message);
     res.json({ err });
