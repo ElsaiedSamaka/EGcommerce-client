@@ -6,6 +6,7 @@ var moment = require("moment");
 const getAllProducts = async (req, res) => {
   const perPage = 10;
   let page = parseInt(req.query.page) || 1;
+
   try {
     const products = await Product.find({})
       .sort("-createdAt")
@@ -105,28 +106,11 @@ const getProductByID = async (req, res) => {
 
 // POST: post new product
 // TODO: allow only admin to add products
+// TODO: add validatetion for adding products with same productCode as it act as unique indexe
 const addProduct = async (req, res) => {
   const { body } = req;
-  if (
-    !body.productCode ||
-    !body.title ||
-    !body.imagePath ||
-    !body.description ||
-    !body.price ||
-    !body.available
-  ) {
-    res.status(400).send({
-      status: "FAILED",
-      data: {
-        error:
-          "One of the following keys is missing or is empty in request body: 'name', 'mode', 'equipment', 'exercises', 'trainerTips'",
-      },
-    });
-    return;
-  }
   try {
     const {
-      productCode,
       title,
       price,
       description,
@@ -135,8 +119,7 @@ const addProduct = async (req, res) => {
       available,
     } = body;
 
-    const newProduct = new Products({
-      productCode,
+    const newProduct = new Product({
       title,
       price,
       description,
@@ -157,7 +140,6 @@ const addProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   try {
     const {
-      productCode,
       title,
       price,
       description,
@@ -166,11 +148,10 @@ const updateProduct = async (req, res) => {
       available,
     } = req.body;
     let productID = req.params.id;
-    const product = await Products.findByIdAndUpdate(
+    const product = await Product.findByIdAndUpdate(
       productID,
       {
         $set: {
-          productCode,
           title,
           price,
           description,
