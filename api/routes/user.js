@@ -1,159 +1,142 @@
-const router = require("express").Router()
-const bcrypt = require("bcryptjs")
-const { celebrate } = require('celebrate')
+const express = require("express");
+const router = express.Router();
+const csrf = require("csurf");
+var passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
+const Product = require("../models/Product.model");
+const Order = require("../models/Order.model");
+const Cart = require("../models/Cart.model");
+const middleware = require("../middleware");
+const {
+  userSignUpValidationRules,
+  userSignInValidationRules,
+  validateSignup,
+  validateSignin,
+} = require("../config/validator");
+const csrfProtection = csrf();
+router.use(csrfProtection);
 
-const User = require("../models/User.model")
-const { user: userSchema } = require('../models/schema')
-const { 
-	verifyToken,
-	verifyAuthorization,
-	verifyAdminAccess,
-} = require('../middlewares/verifyAuth')
+// GET: display the signup form with csrf token
+router.get("/signup", middleware.isNotLoggedIn, (req, res) => {
+  var errorMsg = req.flash("error")[0];
+  res.render("user/signup", {
+    csrfToken: req.csrfToken(),
+    errorMsg,
+    pageName: "Sign Up",
+  });
+});
+// POST: handle the signup logic
+router.post(
+  "/signup",
+  [
+    middleware.isNotLoggedIn,
+    userSignUpValidationRules(),
+    validateSignup,
+    passport.authenticate("local.signup", {
+      successRedirect: "/user/profile",
+      failureRedirect: "/user/signup",
+      failureFlash: true,
+    }),
+  ],
+  async (req, res) => {
+    try {
+      //if there is cart session, save it to the user's cart in db
+      if (req.session.cart) {
+        const cart = await new Cart(req.session.cart);
+        cart.user = req.user._id;
+        await cart.save();
+      }
+      // redirect to the previous URL
+      if (req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+      } else {
+        res.redirect("/user/profile");
+      }
+    } catch (err) {
+      console.log(err);
+      req.flash("error", err.message);
+      return res.redirect("/");
+    }
+  }
+);
 
+// GET: display the signin form with csrf token
+router.get("/signin", middleware.isNotLoggedIn, async (req, res) => {
+  var errorMsg = req.flash("error")[0];
+  res.render("user/signin", {
+    csrfToken: req.csrfToken(),
+    errorMsg,
+    pageName: "Sign In",
+  });
+});
 
-// Get all users - admin only
-router.get("/", 
-	verifyAdminAccess, 
-	celebrate({ query: userSchema.query }), 
-	async (req, res) => {
-	const query = req.query
-	try {
-		let users 
-		if (query.new) {
-			users = await User
-				.find({}, { password: 0 }) // exclude password
-				.sort({ createdAt: -1 })
-				.limit(5)
-		} else {
-			users = await User.find({}, { password: 0 })
-		}
-		return res.json(users)
+// POST: handle the signin logic
+router.post(
+  "/signin",
+  [
+    middleware.isNotLoggedIn,
+    userSignInValidationRules(),
+    validateSignin,
+    passport.authenticate("local.signin", {
+      failureRedirect: "/user/signin",
+      failureFlash: true,
+    }),
+  ],
+  async (req, res) => {
+    try {
+      // cart logic when the user logs in
+      let cart = await Cart.findOne({ user: req.user._id });
+      // if there is a cart session and user has no cart, save it to the user's cart in db
+      if (req.session.cart && !cart) {
+        const cart = await new Cart(req.session.cart);
+        cart.user = req.user._id;
+        await cart.save();
+      }
+      // if user has a cart in db, load it to session
+      if (cart) {
+        req.session.cart = cart;
+      }
+      // redirect to old URL before signing in
+      if (req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+      } else {
+        res.redirect("/user/profile");
+      }
+    } catch (err) {
+      console.log(err);
+      req.flash("error", err.message);
+      return res.redirect("/");
+    }
+  }
+);
 
-	} catch (err) {
-		console.error(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
+// GET: display user's profile
+router.get("/profile", middleware.isLoggedIn, async (req, res) => {
+  const successMsg = req.flash("success")[0];
+  const errorMsg = req.flash("error")[0];
+  try {
+    // find all orders of this user
+    allOrders = await Order.find({ user: req.user });
+    res.render("user/profile", {
+      orders: allOrders,
+      errorMsg,
+      successMsg,
+      pageName: "User Profile",
+    });
+  } catch (err) {
+    console.log(err);
+    return res.redirect("/");
+  }
+});
 
-// Get current user - any authenticated user
-router.get("/me", verifyToken, async (req, res) => {
-	try {
-		const user = await User.findById(
-			req.user.uid,
-			{ password: 0 },
-		)
-		return res.json({"status": "ok", user})
-
-	} catch (err) {
-		console.error(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
-
-// Update a user - authorized user & admin only
-router.put("/:id", 
-	verifyAuthorization, 
-	celebrate({ body: userSchema.update }),
-	async (req, res) => {
-	let { currentPassword, newPassword, fullname } = req.body
-
-	// reset password
-	let password
-	if (newPassword) { 
-		const user = await User.findById(req.params.id)
-		const isValid = await bcrypt.compare(currentPassword, user.password)
-
-		if (isValid) {
-			password = await bcrypt.hash(newPassword, 10)
-		} else {
-			return res.status(401).json(userResponse.userUpdateFailed)
-		}
-	}
-
-	try {
-		await User.findByIdAndUpdate(
-			req.params.id,
-			{$set: { fullname, password } },
-			{new: true},
-		)
-		return res.json(userResponse.userUpdated)
-		
-	} catch (err) {
-		console.error(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
-
-// Delete a user - authorized user & admin only
-router.delete("/:id", verifyAuthorization, async (req, res) => {
-	try {
-		await User.findByIdAndDelete(req.params.id)
-		res.json(userResponse.userDeleted)
-
-	} catch (err) {
-		console.log(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
-
-// Get user statistics - admin only
-router.get("/stats", verifyAdminAccess, async (req, res) => {
-	const date = new Date()
-	const lastYear = new Date(date.setFullYear(date.getFullYear() - 1))
-
-	try {
-		const data = await User.aggregate([
-			{$match: {
-				createdAt: { $gte: lastYear },
-			}},
-			{$project: {
-				month: { $month: "$createdAt" },
-			}},
-			{$group: {
-				_id: "$month",
-				total: { $sum: 1},
-			}}
-		])
-		res.json(data)
-
-	} catch (err) {
-		console.error(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
-
-// Get any user - admin only
-router.get("/:id", verifyAdminAccess, async (req, res) => {
-	try {
-		const user = await User.findById(
-			req.params.id, 
-			{ password: 0 },
-		)
-		return res.json(user)
-
-	} catch (err) {
-		console.error(err)
-		return res.status(500).json(userResponse.unexpectedError)
-	}
-})
-
-const userResponse = {
-	unexpectedError: {
-		status: "error",
-		message: "an unexpected error occurred",
-	},
-	userDeleted: {
-		status: "ok",
-		message: "user has been deleted",
-	},
-	userUpdateFailed: {
-		status: "error",
-		message: "user update failed"
-	},
-	userUpdated: {
-		status: "ok",
-		message: "user has been updated",
-	}
-}
-
-module.exports = router
+// GET: logout
+router.get("/logout", middleware.isLoggedIn, (req, res) => {
+  req.logout();
+  req.session.cart = null;
+  res.redirect("/");
+});
+module.exports = router;
