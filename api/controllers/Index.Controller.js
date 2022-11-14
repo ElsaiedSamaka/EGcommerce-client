@@ -1,17 +1,11 @@
-const express = require("express");
-const csrf = require("csurf");
 const Product = require("../models/Product.model");
-const Category = require("../models/Category.model");
 const Cart = require("../models/Cart.model");
-const Order = require("../models/Order.model");
 const middleware = require("../middleware");
-const router = express.Router();
-
-const csrfProtection = csrf();
-router.use(csrfProtection);
+const { default: mongoose } = require("mongoose");
 
 // GET: home page
-router.get("/", async (req, res) => {
+// TODO: custom this end-point to retrieve different type of products i.e. (Featured , Lateset , ...)
+const getHome = async (req, res) => {
   try {
     const products = await Product.find({})
       .sort("-createdAt")
@@ -21,11 +15,12 @@ router.get("/", async (req, res) => {
     console.log(error);
     res.json({ error });
   }
-});
+};
 
 // GET: add a product to the shopping cart when "Add to cart" button is pressed
-router.get("/add-to-cart/:id", async (req, res) => {
+const addToCart = async (req, res) => {
   const productId = req.params.id;
+  console.log(productId);
   try {
     // get the correct cart, either from the db, session, or an empty cart.
     let user_cart;
@@ -72,16 +67,15 @@ router.get("/add-to-cart/:id", async (req, res) => {
       await cart.save();
     }
     req.session.cart = cart;
-    res.redirect(req.headers.referer);
-    console.log(req.headers.referer);
+
+    res.json({ cart: cart });
   } catch (err) {
-    console.log(err.message);
-    res.json({ err });
+    res.json({ mssg: err });
   }
-});
+};
 
 // GET: view shopping cart contents
-router.get("/shopping-cart", async (req, res) => {
+const getShoppingCart = async (req, res) => {
   try {
     // find the cart, whether in session or in db based on the user state
     let cart_user;
@@ -108,17 +102,16 @@ router.get("/shopping-cart", async (req, res) => {
     // otherwise, load the session's cart
     return res.json({
       cart: req.session.cart,
-      pageName: "Shopping Cart",
       products: await productsFromCart(req.session.cart),
     });
   } catch (err) {
     console.log(err.message);
     res.json({ err });
   }
-});
+};
 
 // GET: reduce one from an item in the shopping cart
-router.get("/reduce/:id", async function (req, res, next) {
+const reduceShoppingCart = async function (req, res, next) {
   // if a user is logged in, reduce from the user's cart and save
   // else reduce from the session's cart
   const productId = req.params.id;
@@ -155,16 +148,18 @@ router.get("/reduce/:id", async function (req, res, next) {
         await Cart.findByIdAndRemove(cart._id);
       }
     }
-    res.redirect(req.headers.referer);
-    console.log(req.headers.referer);
+    res.json({
+      cart: cart,
+      products: await productsFromCart(req.session.cart),
+    });
   } catch (err) {
     console.log(err.message);
     res.json({ err });
   }
-});
+};
 
 // GET: remove all instances of a single product from the cart
-router.get("/removeAll/:id", async function (req, res, next) {
+const emptyCart = async function (req, res, next) {
   const productId = req.params.id;
   let cart;
   try {
@@ -191,74 +186,29 @@ router.get("/removeAll/:id", async function (req, res, next) {
       req.session.cart = null;
       await Cart.findByIdAndRemove(cart._id);
     }
-    res.redirect(req.headers.referer);
+    res.json({
+      cart: cart,
+      products: await productsFromCart(req.session.cart),
+    });
   } catch (err) {
     console.log(err.message);
     res.json({ err });
   }
-});
+};
 
 // GET: checkout form with csrf token
-router.get("/checkout", middleware.isLoggedIn, async (req, res) => {
-  const errorMsg = req.flash("error")[0];
-
+const checkoutCart = async (req, res) => {
   if (!req.session.cart) {
     return res.redirect("/shopping-cart");
   }
   //load the cart with the session's cart's id from the db
   cart = await Cart.findById(req.session.cart._id);
-
-  const errMsg = req.flash("error")[0];
   res.json({
     total: cart.totalCost,
     csrfToken: req.csrfToken(),
-    errMsg,
     pageName: "Checkout",
   });
-});
-
-// // POST: handle checkout logic and payment using Stripe
-// router.post("/checkout", middleware.isLoggedIn, async (req, res) => {
-//   if (!req.session.cart) {
-//     return res.send("!req.session.cart => /shopping-cart");
-//   }
-//   const cart = await Cart.findById(req.session.cart._id);
-//   stripe.charges.create(
-//     {
-//       amount: cart.totalCost * 100,
-//       currency: "usd",
-//       source: req.body.stripeToken,
-//       description: "Test charge",
-//     },
-//     function (err, charge) {
-//       if (err) {
-//         console.log(err);
-//         return res.redirect("/checkout");
-//       }
-//       const order = new Order({
-//         user: req.user,
-//         cart: {
-//           totalQty: cart.totalQty,
-//           totalCost: cart.totalCost,
-//           items: cart.items,
-//         },
-//         address: req.body.address,
-//         paymentId: charge.id,
-//       });
-//       order.save(async (err, newOrder) => {
-//         if (err) {
-//           console.log(err);
-//           return res.redirect("/checkout");
-//         }
-//         await cart.save();
-//         await Cart.findByIdAndDelete(cart._id);
-//         req.session.cart = null;
-//         res.redirect("/user/profile");
-//       });
-//     }
-//   );
-// });
-
+};
 // create products array to store the info of each product in the cart
 async function productsFromCart(cart) {
   let products = []; // array of objects
@@ -273,4 +223,11 @@ async function productsFromCart(cart) {
   return products;
 }
 
-module.exports = router;
+module.exports = {
+  getHome,
+  addToCart,
+  getShoppingCart,
+  reduceShoppingCart,
+  emptyCart,
+  checkoutCart,
+};

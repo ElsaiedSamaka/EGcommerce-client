@@ -55,7 +55,7 @@ app.use(async (req, res, next) => {
 });
 
 //routes config
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes/index.route");
 const productsRouter = require("./routes/products.route");
 const categoriesRouter = require("./routes/categories.route");
 const usersRouter = require("./routes/user");
