@@ -7,19 +7,15 @@ const getAllCategories = async (req, res) => {
   let page = parseInt(req.query.page) || 1;
 
   try {
-    const categories = await Category.find({})
-      .sort("-createdAt")
-      .skip(perPage * page - perPage)
-      .limit(perPage);
+    const categories = await Category.find({});
 
-    const count = await Product.count();
+    const count = await Category.count();
 
     res.json({
       pageName: "All Categories",
       categories: categories,
       current: page,
       home: "/categories/?",
-      pages: Math.ceil(count / perPage),
     });
   } catch (error) {
     console.log(error);
