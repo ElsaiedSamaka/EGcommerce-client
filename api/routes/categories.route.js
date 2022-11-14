@@ -10,8 +10,8 @@ router.get("/", cache("2 minutes"), CategoriesController.getAllCategories);
 // POST: post NEW Category
 router.post("/", CategoriesController.addCategory);
 
-// PUT: update Category
-router.put("/:id", CategoriesController.updateCategory);
+// PATCH: update Category
+router.patch("/:id", CategoriesController.updateCategory);
 
 // Delete: delete a Category
 router.delete("/:id", CategoriesController.deleteCategory);
