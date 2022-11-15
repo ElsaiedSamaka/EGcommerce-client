@@ -39,8 +39,8 @@ const validateSignup = (req, res, next) => {
     errors.array().forEach((error) => {
       messages.push(error.msg);
     });
-    req.flash("error", messages);
-    return res.redirect("/user/signup");
+    // return res.redirect("/user/signup");
+    return res.send("/user/signup");
   }
   next();
 };
@@ -52,8 +52,8 @@ const validateSignin = (req, res, next) => {
     errors.array().forEach((error) => {
       messages.push(error.msg);
     });
-    req.flash("error", messages);
-    return res.redirect("/user/signin");
+    // return res.redirect("/user/signin");
+    return res.send("/user/signin");
   }
   next();
 };
@@ -67,7 +67,8 @@ const validateContactUs = (req, res, next) => {
     });
     console.log(messages);
     req.flash("error", messages);
-    return res.redirect("/pages/contact-us");
+    // return res.redirect("/pages/contact-us");
+    return res.send("/pages/contact-us");
   }
   next();
 };
