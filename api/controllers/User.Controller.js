@@ -1,6 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 const Cart = require("../models/Cart.model");
+const UserModel = require("../models/User.model");
 
 // GET: display the signup form with csrf token
 // TODO: setup <input type="hidden" name="csurf" value={{csrfToken}} />
@@ -13,6 +14,24 @@ const getSignUpForm = async (req, res) => {
 
 // POST: handle the signup logic
 const signUp = async (req, res) => {
+  const { body } = req;
+  //post new user
+  try {
+    const user = await User.findOne({ email: email });
+    if (user) {
+      res.json({ message: "Email already exists" });
+    } else {
+      const { username, email, password, permissionLevel } = body;
+      const newUser = await new User();
+      newUser.username = username;
+      newUser.email = email;
+      newUser.password = newUser.encryptPassword(password);
+      await newUser.save();
+      await res.json({ newUser });
+    }
+  } catch (err) {
+    await res.json({ err });
+  }
   try {
     //if there is cart session, save it to the user's cart in db
     if (req.session.cart) {
@@ -22,7 +41,7 @@ const signUp = async (req, res) => {
     }
     // redirect to the previous URL
     if (req.session.oldUrl) {
-      var oldUrl = req.session.oldUrl;
+      let oldUrl = req.session.oldUrl;
       req.session.oldUrl = null;
       // res.redirect(oldUrl);
       res.send(oldUrl);
@@ -46,6 +65,16 @@ const getSignInForm = async (req, res) => {
 
 // POST: handle the signin logic
 const signIn = async (req, res) => {
+  const { body } = req;
+  let { email } = body;
+  // sign in user
+  const user = await User.findOne({ email: email });
+  if (!user) {
+    res.json({ message: "User doesn't exist" });
+  }
+  if (!user.validPassword(password)) {
+    res.json({ message: "Wrong password" });
+  }
   try {
     // cart logic when the user logs in
     let cart = await Cart.findOne({ user: req.user._id });
