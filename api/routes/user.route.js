@@ -15,7 +15,7 @@ const {
 const User = require("../models/User.model");
 const csrfProtection = csrf();
 // TODO: need setup with client
-// router.use(csrfProtection);
+router.use(csrfProtection);
 
 // GET: display the signup form with csrf token
 // TODO: setup <input type="hidden" name="csurf" value={{csrfToken}} />
@@ -60,8 +60,10 @@ router.get("/profile", middleware.isLoggedIn, async (req, res) => {
   try {
     // find all orders of this user
     allOrders = await Order.find({ user: req.user });
+    user = await User.find({ email: req.user.email });
     await res.json({
       orders: allOrders,
+      user: user,
       pageName: "User Profile",
     });
   } catch (err) {
