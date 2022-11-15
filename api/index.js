@@ -58,7 +58,7 @@ app.use(async (req, res, next) => {
 const indexRouter = require("./routes/index.route");
 const productsRouter = require("./routes/products.route");
 const categoriesRouter = require("./routes/categories.route");
-const usersRouter = require("./routes/user");
+const usersRouter = require("./routes/user.route");
 app.use("/products", productsRouter);
 app.use("/categories", categoriesRouter);
 app.use("/user", usersRouter);

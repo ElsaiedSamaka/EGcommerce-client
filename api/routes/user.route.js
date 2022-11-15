@@ -3,9 +3,8 @@ const router = express.Router();
 const csrf = require("csurf");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-const Order = require("../models/Order.model");
-const Cart = require("../models/Cart.model");
 const UserController = require("../controllers/User.Controller");
+const Order = require("../models/Order.model");
 const middleware = require("../middleware");
 const {
   userSignUpValidationRules,
@@ -13,8 +12,10 @@ const {
   validateSignup,
   validateSignin,
 } = require("../config/validator");
+const User = require("../models/User.model");
 const csrfProtection = csrf();
-router.use(csrfProtection);
+// TODO: need setup with client
+// router.use(csrfProtection);
 
 // GET: display the signup form with csrf token
 // TODO: setup <input type="hidden" name="csurf" value={{csrfToken}} />
@@ -27,11 +28,11 @@ router.post(
     middleware.isNotLoggedIn,
     userSignUpValidationRules(),
     validateSignup,
-    passport.authenticate("local.signup", {
-      successRedirect: "/user/profile",
-      failureRedirect: "/user/signup",
-      failureFlash: true,
-    }),
+    // passport.authenticate("local.signup", {
+    //   successRedirect: "/user/profile",
+    //   failureRedirect: "/user/signup",
+    //   failureFlash: true,
+    // }),
   ],
   UserController.signUp
 );
@@ -46,28 +47,43 @@ router.post(
     middleware.isNotLoggedIn,
     userSignInValidationRules(),
     validateSignin,
-    passport.authenticate("local.signin", {
-      failureRedirect: "/user/signin",
-      failureFlash: true,
-    }),
+    // passport.authenticate("local.signin", {
+    //   failureRedirect: "/user/signin",
+    //   failureFlash: true,
+    // }),
   ],
   UserController.signIn
 );
 
 // GET: display user's profile
-// router.get("/profile", middleware.isLoggedIn, async (req, res) => {
-//   try {
-//     // find all orders of this user
-//     allOrders = await Order.find({ user: req.user });
-//     res.render("user/profile", {
-//       orders: allOrders,
-//       pageName: "User Profile",
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     return res.redirect("/");
-//   }
-// });
+router.get("/profile", middleware.isLoggedIn, async (req, res) => {
+  try {
+    // find all orders of this user
+    allOrders = await Order.find({ user: req.user });
+    await res.json({
+      orders: allOrders,
+      pageName: "User Profile",
+    });
+  } catch (err) {
+    console.log(err);
+    return await res.json({ err });
+  }
+});
+
+// GET: display all users
+router.get("/all", async (req, res) => {
+  try {
+    // find all orders of this user
+    allUsers = await User.find({});
+    await res.json({
+      users: allUsers,
+      pageName: "Users",
+    });
+  } catch (err) {
+    console.log(err);
+    return await res.json({ err });
+  }
+});
 
 // GET: logout
 router.get("/logout", middleware.isLoggedIn, UserController.logOut);

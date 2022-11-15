@@ -1,19 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const csrf = require("csurf");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-const Order = require("../models/Order.model");
 const Cart = require("../models/Cart.model");
-const middleware = require("../middleware");
-const {
-  userSignUpValidationRules,
-  userSignInValidationRules,
-  validateSignup,
-  validateSignin,
-} = require("../config/validator");
-const csrfProtection = csrf();
-router.use(csrfProtection);
 
 // GET: display the signup form with csrf token
 // TODO: setup <input type="hidden" name="csurf" value={{csrfToken}} />
@@ -40,8 +27,8 @@ const signUp = async (req, res) => {
       // res.redirect(oldUrl);
       res.send(oldUrl);
     } else {
-      // res.send( "/user/profile" );
-      res.redirect("/user/profile");
+      res.send("/user/profile");
+      //   res.redirect("/user/profile");
     }
   } catch (err) {
     console.log(err);
@@ -76,13 +63,13 @@ const signIn = async (req, res) => {
     if (req.session.oldUrl) {
       var oldUrl = req.session.oldUrl;
       req.session.oldUrl = null;
-      res.redirect(oldUrl);
+      res.send(oldUrl);
     } else {
-      res.redirect("/user/profile");
+      res.send("/user/profile");
     }
   } catch (err) {
     console.log(err);
-    return res.redirect("/");
+    return res.josn({ err });
   }
 };
 
@@ -90,7 +77,7 @@ const signIn = async (req, res) => {
 const logOut = async (req, res) => {
   await req.logout();
   req.session.cart = null;
-  await res.redirect("/");
+  await res.send("/");
 };
 module.exports = {
   getSignUpForm,
