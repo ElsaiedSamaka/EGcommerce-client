@@ -9,7 +9,6 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   ssr: false,
 });
 export default function HomeSlider({ products }) {
-  console.log(products[1].category);
   const options = {
     margin: 30,
     responsiveClass: true,

@@ -28,9 +28,9 @@ export default function Home({ products }) {
   );
 }
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:4000/products");
-  const result = await res.json();
-  const products = result.slice(0, 4);
+  const response = await fetch("https://e-gecommerce-api.vercel.app");
+  const result = await response.json();
+  const products = result.products.slice(0, 4);
   return {
     props: {
       products,

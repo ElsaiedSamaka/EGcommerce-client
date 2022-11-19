@@ -1,6 +1,7 @@
 import RatingComponent from "./RatingComponent";
 
 const SingleSuit = ({ product }) => {
+  console.log(product);
   return (
     <div className="col-md-3 col-sm-3 col-xs-12">
       <div className="single_suite">
@@ -41,18 +42,18 @@ const SingleSuit = ({ product }) => {
         </div>
         <div className="single_suite_text">
           <a href="product_detail">
-            <h5>{product.title.split(" ").slice(0, 5).join(" ")}</h5>
+            <h5>{product.title.split(" ").slice(0, 3).join(" ")}</h5>
           </a>
         </div>
         <div className="single_suite_left">
           <div className="suite_left_del">
-            <del>$NaN</del>
+            <del>${product.discount ? product.discount : ""}</del>
           </div>
           <div className="suite_left_p">
-            <p>${product.price}</p>
+            <p>$ {product.price ? product.price : " free "}</p>
           </div>
         </div>
-        <RatingComponent productRating={product.rating.rate} />
+        <RatingComponent productRating={product.rate} />
       </div>
 
       {/* <!-- Modal --> */}

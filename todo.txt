@@ -1,7 +1,0 @@
-#1 adding nprogress bar to Client
-#2 adding Loading components to components
-#3 setup admin dashboard
-#4 deploy client to aws 
-#5 deploy api to aws    
-#6 seprate admin dashboard alone as a stand alone web app
-#7 seprate backend as a stand alone web api
